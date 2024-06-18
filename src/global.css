@@ -1,0 +1,42 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+
+  max-width: 90%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  border: 2px solid red;
+}
+
+body, input, textarea, button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+
+  --gray-300: #A6A6A6;
+  --gray-500: #6B6B6B;
+  --gray-700: #1F1F1F;
+
+  --red: #EB0B00;
+
+  --yellow: #FAF534;
+}
+
+@media (min-width: 1440px) {
+  body {
+    max-width: 70%;
+  }
+}
