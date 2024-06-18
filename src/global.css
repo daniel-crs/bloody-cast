@@ -12,8 +12,6 @@ body {
   max-width: 90%;
   margin: 2rem auto;
   padding: 0 1rem;
-
-  border: 2px solid red;
 }
 
 body, input, textarea, button {
