@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 9rem;
+    border-bottom: 1px solid yellow;
+}
+
+.bloodyLogo {
+    height: 7rem;
+    margin-left: 4rem;
+}
+
+.menuContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.iconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 3.4rem;
+    height: 3.1rem;
+    margin-right: 4rem;
+    border-radius: 8px;
+    background-color: var(--yellow-200);
+
+    cursor: pointer;
+}
+
+.iconContainer:hover {
+    background-color: var(--yellow-500);
+
+}

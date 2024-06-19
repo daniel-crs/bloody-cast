@@ -1,15 +1,11 @@
-import styles from './Home.module.css';
+// import styles from './Home.module.css';
 
-import { Navbar } from '../../components/navbar';
+import { Header } from "../../components/Header"
 
 export function Home() {
   return (
     <div>
-      <Navbar />
-
-      <div className={styles.container}>
-        <h1>Hello world</h1>
-      </div>
+      <Header />
     </div>
   );
 }

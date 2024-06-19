@@ -9,15 +9,22 @@ body {
   color: var(--white);
   -webkit-font-smoothing: antialiased;
 
-  max-width: 90%;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 body, input, textarea, button {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 1rem;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h2:hover {
+  color: var(--red);
 }
 
 :root {
@@ -30,10 +37,11 @@ body, input, textarea, button {
 
   --red: #EB0B00;
 
-  --yellow: #FAF534;
+  --yellow-200: #FAF534;
+  --yellow-500: #e0d900;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1600px) {
   body {
     max-width: 70%;
   }
