@@ -24,7 +24,8 @@ body, input, textarea, button {
   --black: #000;
 
   --gray-300: #A6A6A6;
-  --gray-500: #6B6B6B;
+  --gray-400: #6B6B6B;
+  --gray-500: #222222;
   --gray-700: #1F1F1F;
 
   --red: #EB0B00;
@@ -33,7 +34,7 @@ body, input, textarea, button {
   --yellow-500: #e0d900;
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1921px) {
   body {
     max-width: 70%;
   }

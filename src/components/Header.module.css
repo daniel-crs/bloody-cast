@@ -1,39 +1,72 @@
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    height: 9rem;
-    border-bottom: 1px solid yellow;
+@media (min-width: 1024px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        height: 9rem;
+        border-bottom: 1px solid var(--yellow-200);
+    }
+    
+    .bloodyLogo {
+        height: 6.4rem;
+        margin-left: 50px;
+    }
+    
+    .menuContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }    
 }
 
-.bloodyLogo {
-    height: 7rem;
-    margin-left: 4rem;
+@media (min-width: 1280px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        height: 9rem;
+        border-bottom: 1px solid var(--yellow-200);
+    }
+    
+    .bloodyLogo {
+        height: 6.8rem;
+        margin-left: 50px;
+    }
+    
+    .menuContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+    }    
 }
 
-.menuContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 30px;
+
+@media (min-width: 1440px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        height: 9rem;
+        border-bottom: 1px solid var(--yellow-200);
+    }
+    
+    .bloodyLogo {
+        height: 7rem;
+        margin-left: 50px;
+    }
+    
+    .menuContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+    }    
 }
 
-.iconContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    width: 3.4rem;
-    height: 3.1rem;
-    margin-right: 4rem;
-    border-radius: 8px;
-    background-color: var(--yellow-200);
 
-    cursor: pointer;
-}
-
-.iconContainer:hover {
-    background-color: var(--yellow-500);
-
-}

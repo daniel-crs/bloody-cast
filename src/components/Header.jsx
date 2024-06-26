@@ -2,8 +2,7 @@ import styles from "./Header.module.css"
 
 import BloodyCastLogo from "../assets/logo.png"
 import { MenuElements } from "./MenuElements";
-
-import { IoIosSearch } from "react-icons/io";
+import { SearchBar } from "./SearchBar";
 
 export function Header() {
     const menuOptions = [
@@ -24,9 +23,7 @@ export function Header() {
                     )
                 })}
 
-                <button className={styles.iconContainer}>
-                    <IoIosSearch size={35} color={"#000"} />
-                </button>
+                <SearchBar />
             </div>
         </header>
     )
