@@ -1,3 +1,23 @@
+.activeContainer {
+    background-color: var(--yellow-200);
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.activeContainer a {
+    color: var(--red);
+}
+
+a {
+    font-size: 18px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--red);
+}
+
 @media (min-width: 1024px) {
     .activeContainer {
         background-color: var(--yellow-200);
