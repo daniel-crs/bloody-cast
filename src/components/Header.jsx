@@ -1,5 +1,4 @@
 import styles from "./Header.module.css"
-import { useWindowHeight } from '@react-hook/window-size'
 import { useEffect, useState } from "react";
 
 import BloodyCastLogo from "../assets/logo.png"

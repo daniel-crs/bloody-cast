@@ -28,13 +28,15 @@ body, input, textarea, button {
   --gray-500: #222222;
   --gray-700: #1F1F1F;
 
+  --gray-fill-400: rgb(81,79,74, 0.7);
+
   --red: #EB0B00;
 
   --yellow-200: #FAF534;
   --yellow-500: #e0d900;
 }
 
-@media (min-width: 1921px) {
+@media (min-width: 1981px) {
   body {
     max-width: 70%;
   }
