@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { NavbarModal } from "../NavbarModal";
 
-export function NavbarMobile() {
+export function NavbarMobile({ menuOptions }) {
     const [showMenu, setShowMenu] = useState(false);
     
     return (
@@ -14,7 +14,11 @@ export function NavbarMobile() {
                 <span className={styles.linha}></span>
             </div>
 
-            <NavbarModal showMenu={showMenu} setShowMenu={() => setShowMenu(!showMenu)} />
+            <NavbarModal 
+                menuOptions={menuOptions} 
+                showMenu={showMenu} 
+                setShowMenu={() => setShowMenu(!showMenu)} 
+            />
         </>
     );
 }

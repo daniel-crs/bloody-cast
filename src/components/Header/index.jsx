@@ -7,6 +7,10 @@ import { NavbarMobile } from "../NavbarMobile";
 
 export function Header() {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const menuOptions = [
+        {optionName: "Home", optionUrl: "/"}, {optionName: "PodCast", optionUrl: "/PodCast"}, {optionName: "Cinema", optionUrl: "#"},
+        {optionName: "Livros", optionUrl: "#"}, {optionName: "Musícas", optionUrl: "#"}, {optionName: "Jogos", optionUrl: "#"}
+    ];
 
     const addScreenWidth = () => {
         setScreenWidth(window.innerWidth);
@@ -23,11 +27,11 @@ export function Header() {
     const ScreenRender = () => {
         if (screenWidth < 1024) {
             return (
-                <NavbarMobile />
+                <NavbarMobile menuOptions={menuOptions} />
             )
         } else {
             return (
-                 <NavbarDesktop />
+                 <NavbarDesktop menuOptions={menuOptions} />
             )
         }
     }

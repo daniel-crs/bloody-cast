@@ -6,12 +6,8 @@ import { SearchModal } from "../SearchModal";
 import { CgClose } from "react-icons/cg";
 import { IoIosSearch } from "react-icons/io";
 
-export function NavbarModal({ showMenu, setShowMenu }) {
+export function NavbarModal({ menuOptions, showMenu, setShowMenu }) {
     const [openSeachModal, setOpenSeachModal] = useState(false);
-    const menuOptions = [
-        {optionName: "Home", optionUrl: "/"}, {optionName: "PodCast", optionUrl: "/PodCast"}, {optionName: "Cinema", optionUrl: "#"},
-        {optionName: "Livros", optionUrl: "#"}, {optionName: "Musícas", optionUrl: "#"}, {optionName: "Jogos", optionUrl: "#"}
-    ];
 
     if(showMenu) {
         return (
