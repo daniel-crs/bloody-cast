@@ -1,10 +1,13 @@
 import styles from "./NavbarModal.module.css"
+import { useState } from "react";
 
-import { CgClose } from "react-icons/cg";
 import { MenuElements } from "../MenuElements";
-import { SearchBar } from "../SearchBar";
+import { SearchModal } from "../SearchModal";
+import { CgClose } from "react-icons/cg";
+import { IoIosSearch } from "react-icons/io";
 
 export function NavbarModal({ showMenu, setShowMenu }) {
+    const [openSeachModal, setOpenSeachModal] = useState(false);
     const menuOptions = [
         {optionName: "Home", optionUrl: "/"}, {optionName: "PodCast", optionUrl: "/PodCast"}, {optionName: "Cinema", optionUrl: "#"},
         {optionName: "Livros", optionUrl: "#"}, {optionName: "Musícas", optionUrl: "#"}, {optionName: "Jogos", optionUrl: "#"}
@@ -25,9 +28,14 @@ export function NavbarModal({ showMenu, setShowMenu }) {
                             )
                         })}
 
-                        <SearchBar />
+                        <div className={styles.seachContainer} onClick={() => setOpenSeachModal(true)}>
+                            <p className={styles.seachText}>Pesquisa</p>
+                            <IoIosSearch className={styles.seachIcon} />
+                        </div>
                     </nav>
                 </div>
+
+                <SearchModal openSeachModal={openSeachModal} setOpenSeachModal={() => setOpenSeachModal(!openSeachModal)} />
             </div>
         );
     } else {

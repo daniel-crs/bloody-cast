@@ -36,3 +36,20 @@
     gap: 30px;
     margin-top: 50px;
 }
+
+.seachContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.seachText {
+    font-size: 22px;
+    color: var(--white);
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+.seachIcon {
+    font-size: 30px;
+}
