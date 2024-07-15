@@ -2,24 +2,25 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 50px;
+    gap: 20px;
 }
+
+@media (min-width: 1024px) { 
+    .menuContainer {
+        gap: 30px;
+    }    
+}
+
 
 @media (min-width: 1280px) { 
     .menuContainer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 25px;
+        gap: 40px;
     }    
 }
 
 
 @media (min-width: 1440px) {
     .menuContainer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 30px;
+        gap: 50px;
     }    
 }
