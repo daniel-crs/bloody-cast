@@ -1,9 +1,9 @@
 import styles from "./Header.module.css"
 import { useEffect, useState } from "react";
 
-import BloodyCastLogo from "../assets/logo.png"
-import { NavbarDesktop } from "./NavbarDesktop";
-import { NavbarMobile } from "./NavbarMobile";
+import BloodyCastLogo from "../../assets/logo.png"
+import { NavbarDesktop } from "../NavbarDesktop";
+import { NavbarMobile } from "../NavbarMobile";
 
 export function Header() {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
