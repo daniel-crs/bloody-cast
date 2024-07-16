@@ -21,13 +21,16 @@ body, input, textarea, button {
 
 :root {
   --white: #fff;
+
   --black: #000;
+  --black-fill: rgb(0, 0, 0, 0.8);
 
   --gray-300: #A6A6A6;
   --gray-400: #6B6B6B;
   --gray-500: #222222;
   --gray-700: #1F1F1F;
 
+  --gray-fill-300: rgb(107,107,107, 0.6);
   --gray-fill-400: rgb(81,79,74, 0.7);
 
   --red: #EB0B00;
