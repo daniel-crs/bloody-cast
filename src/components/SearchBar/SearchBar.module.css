@@ -1,0 +1,201 @@
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    background-color: var(--gray-500);
+    height: 2.4rem;
+    min-width: 2.6rem;
+    margin-right: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 30px;
+}
+
+.inputSearch {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    width: 2.8rem;
+    font-size: 1rem;
+    transition: width .2s ease-in-out;
+    color: var(--white);
+}
+
+.inputSearch:focus {
+    width: 250px;
+    padding-left: 16px;
+}
+
+.lebalSearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+
+    height: 2.6rem;
+    width: 2.8rem;
+    border-radius: 0 8px 8px 0;
+    background-color: var(--yellow-200);
+    cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+    .Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .searchBar {
+        display: flex;
+        align-items: center;
+        position: relative;
+    
+        background-color: var(--gray-500);
+        height: 2.6rem;
+        min-width: 2.8rem;
+        margin-right: 50px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .inputSearch {
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        width: 2.8rem;
+        font-size: 1rem;
+        transition: width .2s ease-in-out;
+        color: var(--white);
+    }
+    
+    .inputSearch:focus {
+        width: 250px;
+        padding-left: 16px;
+    }
+    
+    .lebalSearch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+    
+        height: 2.6rem;
+        width: 2.8rem;
+        border-radius: 0 8px 8px 0;
+        background-color: var(--yellow-200);
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 1280px) {
+    .Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .searchBar {
+        display: flex;
+        align-items: center;
+        position: relative;
+    
+        background-color: var(--gray-500);
+        height: 2.8rem;
+        min-width: 3rem;
+        margin-right: 50px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .inputSearch {
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        width: 3rem;
+        font-size: 1rem;
+        transition: width .2s ease-in-out;
+        color: var(--white);
+    }
+    
+    .inputSearch:focus {
+        width: 300px;
+        padding-left: 16px;
+    }
+    
+    .lebalSearch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+    
+        height: 2.8rem;
+        width: 3rem;
+        border-radius: 0 8px 8px 0;
+        background-color: var(--yellow-200);
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 1440px) {
+    .Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .searchBar {
+        display: flex;
+        align-items: center;
+        position: relative;
+    
+        background-color: var(--gray-500);
+        height: 3rem;
+        min-width: 3.2rem;
+        margin-right: 50px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .inputSearch {
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        width: 3.2rem;
+        font-size: 1rem;
+        transition: width .2s ease-in-out;
+        color: var(--white);
+    }
+    
+    .inputSearch:focus {
+        width: 350px;
+        padding-left: 16px;
+    }
+    
+    .lebalSearch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+    
+        height: 3rem;
+        width: 3.2rem;
+        border-radius: 0 8px 8px 0;
+        background-color: var(--yellow-200);
+        cursor: pointer;
+    }
+}
+
+

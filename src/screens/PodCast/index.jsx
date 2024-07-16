@@ -1,7 +1,9 @@
+import { Header } from "../../components/Header"
+
 export function PodCast() {
     return (
         <div>
-            <h1>Pagina do PodCast.</h1>
+            <Header />
         </div>
     )
 }

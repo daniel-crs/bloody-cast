@@ -1,9 +1,11 @@
-import styles from './Home.module.css';
+// import styles from './Home.module.css';
+
+import { Header } from "../../components/Header"
 
 export function Home() {
   return (
-    <div className={styles.App}>
-      <h1>Hello world</h1>
+    <div>
+      <Header />
     </div>
   );
 }

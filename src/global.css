@@ -9,15 +9,12 @@ body {
   color: var(--white);
   -webkit-font-smoothing: antialiased;
 
-  max-width: 90%;
-  margin: 2rem auto;
-  padding: 0 1rem;
-
-  border: 2px solid red;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 body, input, textarea, button {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 1rem;
 }
@@ -27,15 +24,19 @@ body, input, textarea, button {
   --black: #000;
 
   --gray-300: #A6A6A6;
-  --gray-500: #6B6B6B;
+  --gray-400: #6B6B6B;
+  --gray-500: #222222;
   --gray-700: #1F1F1F;
+
+  --gray-fill-400: rgb(81,79,74, 0.7);
 
   --red: #EB0B00;
 
-  --yellow: #FAF534;
+  --yellow-200: #FAF534;
+  --yellow-500: #e0d900;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1981px) {
   body {
     max-width: 70%;
   }

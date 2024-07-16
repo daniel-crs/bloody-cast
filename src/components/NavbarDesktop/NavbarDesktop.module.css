@@ -1,0 +1,26 @@
+.menuContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (min-width: 1024px) { 
+    .menuContainer {
+        gap: 30px;
+    }    
+}
+
+
+@media (min-width: 1280px) { 
+    .menuContainer {
+        gap: 40px;
+    }    
+}
+
+
+@media (min-width: 1440px) {
+    .menuContainer {
+        gap: 50px;
+    }    
+}
