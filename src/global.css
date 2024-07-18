@@ -8,8 +8,6 @@ body {
   background: var(--black);
   color: var(--white);
   -webkit-font-smoothing: antialiased;
-
-  max-width: 100%;
   margin: 0 auto;
 }
 

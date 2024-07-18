@@ -1,0 +1,32 @@
+.bg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--gray-fill-400);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer {
+    position: fixed;
+    height: 30vh;
+    width: 70vw;
+    background-color: var(--black);
+    border-radius: 10px;
+}
+
+.iconPosition {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon {
+    margin-top: 50px;
+    margin-right: 25px;
+    font-size: 35px;
+}
