@@ -7,6 +7,7 @@ import { CardMobile } from '../../components/CardMobile'
 import { CardDesktop } from '../../components/CardDesktop';
 import { RiMovie2Fill } from "react-icons/ri";
 import { IoFilter } from "react-icons/io5";
+import bgImg from "../../assets/pexels-lucadross-5976404.jpg"
 
 export function Movie() {
   const [showFilter, setShowFilter] = useState(false);
@@ -42,8 +43,12 @@ export function Movie() {
 
       <body>
         <div className={styles.titleContainer}>
-            <h3>Cinema</h3>
-            <RiMovie2Fill className={styles.icon} />
+            <img src={bgImg} alt="" />
+
+            <div className={styles.info}>
+              <h3>Cinema</h3>
+              <RiMovie2Fill className={styles.icon} />
+            </div>
         </div>
 
         <div className={styles.container}>
