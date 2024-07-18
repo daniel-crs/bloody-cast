@@ -4,7 +4,7 @@ import { RiMovie2Fill } from "react-icons/ri";
 
 export function BackGroundImg({ title, bgImg}) {
     return (
-        <div className={styles.titleContainer}>
+        <div className={styles.container}>
             <img src={bgImg} alt="" />
 
             <div className={styles.info}>
