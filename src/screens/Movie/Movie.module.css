@@ -19,3 +19,271 @@
     font-size: 2.2rem;
     color: var(--yellow-200);
 }
+
+.container {
+    width: 85%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.title h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding-left: 2.5px;
+}
+
+.underBar {
+    width: 46vw;
+    height: 3px;
+    border-radius: 8px;
+    background-color: var(--yellow-200);
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+ 
+    border: 1px solid var(--white);
+    border-radius: 8px;
+    outline: none;
+    color: white;
+    padding: 10px 10px;
+    cursor: pointer;
+    background-color: inherit;
+    margin: 0;
+}
+
+.filter p {
+    font-size: 1rem;
+}
+
+.filter .icon {
+    font-size: 20px;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+@media(min-width: 375px) {
+    .title h3 {
+        font-size: 1.3rem;
+    }
+    
+    .title {
+        gap: 6px;
+    }
+
+    .underBar {
+        width: 44vw;
+    }
+
+    .filter {
+        padding: 10px 12.5px;
+    }
+
+    .filter p {
+        font-size: 1.1rem;
+    }
+
+    .filter .icon {
+        font-size: 25px;
+    }
+}
+
+@media(min-width: 768px) {
+    .container {
+        width: 75%;
+    }
+
+    .title h3 {
+        font-size: 1.5rem;
+    }
+
+    .underBar {
+        width: 32.5vw;
+        height: 4px;
+    }
+
+    .filter {
+        gap: 15px;
+        padding: 10px 20px;
+    }
+
+    .filter p {
+        font-size: 1.3rem;
+    }
+
+    .filter .icon {
+        font-size: 30px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+
+    .title {
+        gap: 10px;
+    }
+
+    .title h3 {
+        font-size: 2rem;
+    }
+
+    .underBar {
+        width: 30vw;
+        height: 5px;
+    }
+
+    .filter {
+        gap: 15px;
+        padding: 10px 20px;
+    }
+
+    .filter p {
+        font-size: 1.4rem;
+    }
+
+    .filter .icon {
+        font-size: 32.5px;
+    }
+}
+
+@media(min-width: 1280px) {
+
+    .title {
+        gap: 10px;
+    }
+
+    .title h3 {
+        font-size: 2.2rem;
+    }
+
+    .underBar {
+        width: 25vw;
+    }
+
+    .filter {
+        gap: 15px;
+        padding: 10px 25px;
+    }
+
+    .filter p {
+        font-size: 1.4rem;
+    }
+
+    .filter .icon {
+        font-size: 32.5px;
+    }
+}
+
+@media(min-width: 1440px) {
+
+    .title {
+        gap: 10px;
+    }
+
+    .title h3 {
+        font-size: 2.4rem;
+    }
+
+    .underBar {
+        width: 25vw;
+    }
+
+    .filter {
+        gap: 15px;
+        padding: 10px 30px;
+    }
+
+    .filter p {
+        font-size: 1.4rem;
+    }
+
+    .filter .icon {
+        font-size: 32.5px;
+    }
+}
+
+@media(min-width: 1600px) {
+    .title {
+        gap: 10px;
+    }
+
+    .title h3 {
+        font-size: 2.4rem;
+    }
+
+    .underBar {
+        width: 22vw;
+    }
+
+    .filter {
+        gap: 15px;
+        padding: 10px 30px;
+    }
+
+    .filter p {
+        font-size: 1.5rem;
+    }
+
+    .filter .icon {
+        font-size: 32.5px;
+    }
+}
+
+@media(min-width: 1920px) {
+    .container {
+        width: 80%;
+    }
+
+    .title {
+        gap: 10px;
+    }
+
+    .title h3 {
+        font-size: 2.4rem;
+    }
+
+    .underBar {
+        width: 22vw;
+    }
+
+    .filter {
+        gap: 15px;
+        padding: 10px 30px;
+    }
+
+    .filter p {
+        font-size: 1.5rem;
+    }
+
+    .filter .icon {
+        font-size: 32.5px;
+    }
+}

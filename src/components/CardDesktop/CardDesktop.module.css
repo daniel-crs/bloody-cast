@@ -1,0 +1,152 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.imgElement {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    width: 37%;
+    height: 275px;
+}
+
+.imgElement img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.tag {
+    position: absolute;
+    margin: 30px 20px;
+    background-color: var(--yellow-200);
+    border-radius: 8px;
+}
+
+.tag p {
+    font-size: 1rem;
+    padding: 5px 15px;
+    color: var(--red);
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+
+    width: 60%;
+    margin-top: 40px;
+    margin-left: 25px;
+}
+
+.title {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 1rem;
+    font-weight: 400;   
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.author {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    font-size: 0.9rem;
+}
+
+.firstPart {
+    color: var(--gray-400);
+}
+
+.secondPart {
+    color: var(--yellow-200);
+}
+
+.btn {
+    margin-top: 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.btn a {
+    background-color: inherit;
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    padding: 7.5px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn a:hover {
+    background-color: var(--yellow-200);
+    color: var(--red);
+    border: 1px solid var(--black);
+}
+
+@media(min-width: 1280px) {
+    .imgElement {
+        width: 39%;
+        height: 325px;
+    }
+    
+    .tag p {
+        font-size: 1.1rem;
+    }
+
+    .infoContainer {
+        width: 60%;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .description {
+        font-size: 1rem;
+    }
+    
+    .author {
+        font-size: 1rem;
+    }
+    
+    .btn a {
+        padding: 10px 30px;
+        font-size: 1.1rem;
+    }
+}
+
+@media(min-width: 1440px) {
+    .imgElement {
+        width: 40%;
+        height: 325px;
+    }
+    
+    .tag p {
+        font-size: 1.2rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+    
+    .description {
+        font-size: 1.1rem;
+    }
+    
+    .author {
+        font-size: 1rem;
+    }
+    
+    .btn a {
+        padding: 10px 30px;
+        font-size: 1.2rem;
+    }
+}
