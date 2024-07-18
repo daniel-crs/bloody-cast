@@ -1,40 +1,3 @@
-.titleContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: var(--gray-400);
-    width: 100%;
-    height: 300px;
-}
-
-.titleContainer img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.info {
-    position: absolute;
-
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.info h3 {
-    font-size: 2.2rem;
-    color: var(--yellow-200);
-    font-weight: 400;
-}
-
-.info .icon {
-    font-size: 2.2rem;
-    color: var(--yellow-200);
-}
-
 .container {
     width: 85%;
 
@@ -104,18 +67,6 @@
 }
 
 @media(min-width: 375px) {
-    .info {
-        gap: 15px;
-    }
-    
-    .info h3 {
-        font-size: 2.4rem;
-    }
-    
-    .info .icon {
-        font-size: 2.4rem;
-    }
-
     .title h3 {
         font-size: 1.3rem;
     }
@@ -142,10 +93,6 @@
 }
 
 @media(min-width: 768px) {
-    .titleContainer {
-        height: 425px;
-    }
-
     .container {
         width: 75%;
     }
@@ -174,15 +121,6 @@
 }
 
 @media(min-width: 1024px) {
-    .titleContainer {
-        width: 90%;
-        height: 500px;
-        margin-top: 15px;
-        margin-right: auto;
-        margin-left: auto;
-        border-radius: 10px;        
-    }
-
     .container {
         width: 90%;
     }
@@ -215,7 +153,6 @@
 }
 
 @media(min-width: 1280px) {
-
     .title {
         gap: 10px;
     }
@@ -243,11 +180,7 @@
 }
 
 @media(min-width: 1440px) {
-    .titleContainer {
-        height: 550px;      
-    }
-
-    .info h3 {
+   .info h3 {
         font-size: 2.6rem;
     }
     
@@ -309,10 +242,6 @@
 }
 
 @media(min-width: 1920px) {
-    .titleContainer {
-        width: 80%;      
-    }
-
     .container {
         width: 80%;
     }

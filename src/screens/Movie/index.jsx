@@ -2,10 +2,10 @@ import styles from './Movie.module.css';
 import { useState, useEffect } from "react";
 
 import { Header } from "../../components/Header"
+import { BackGroundImg } from '../../components/BackGroundImg';
 import { FilterModal } from "../../components/FilterModal";
 import { CardMobile } from '../../components/CardMobile'
 import { CardDesktop } from '../../components/CardDesktop';
-import { RiMovie2Fill } from "react-icons/ri";
 import { IoFilter } from "react-icons/io5";
 import bgImg from "../../assets/pexels-lucadross-5976404.jpg"
 
@@ -42,14 +42,7 @@ export function Movie() {
       <Header />
 
       <body>
-        <div className={styles.titleContainer}>
-            <img src={bgImg} alt="" />
-
-            <div className={styles.info}>
-              <h3>Cinema</h3>
-              <RiMovie2Fill className={styles.icon} />
-            </div>
-        </div>
+        <BackGroundImg title={"Cinema"} bgImg={bgImg} />
 
         <div className={styles.container}>
           <div className={styles.elements}>
