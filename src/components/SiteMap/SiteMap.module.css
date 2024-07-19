@@ -1,0 +1,54 @@
+.container {
+    width: 85vw;
+    margin-top: 45px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.title h3 {
+    font-size: 1.1rem;
+    margin-left: 2.5px;
+}
+
+.underBar {
+    width: 46vw;
+    height: 3px;
+    border-radius: 8px;
+    background-color: var(--yellow-200);
+}
+
+.elements {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 25px; 
+
+    margin-top: 25px;
+}
+
+.elements a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.activeContainer {
+    outline: 1px solid blue;
+}
+
+.active {
+    background-color: var(--yellow-200);
+}
+
+.active a {
+    font-size: 1rem;
+    color: var(--red);
+}
+
+a:hover {
+    color: var(--red);
+}
