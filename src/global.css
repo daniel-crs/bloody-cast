@@ -36,9 +36,3 @@ body, input, textarea, button {
   --yellow-200: #FAF534;
   --yellow-500: #e0d900;
 }
-
-@media (min-width: 1981px) {
-  body {
-    max-width: 70%;
-  }
-}

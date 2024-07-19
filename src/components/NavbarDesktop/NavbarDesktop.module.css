@@ -7,20 +7,20 @@
 
 @media (min-width: 1024px) { 
     .menuContainer {
-        gap: 30px;
+        gap: 25px;
     }    
 }
 
 
 @media (min-width: 1280px) { 
     .menuContainer {
-        gap: 40px;
+        gap: 30px;
     }    
 }
 
 
 @media (min-width: 1440px) {
     .menuContainer {
-        gap: 50px;
+        gap: 40px;
     }    
 }
