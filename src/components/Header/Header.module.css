@@ -44,25 +44,29 @@
 
 @media (min-width: 1024px) {
     .container {
-        height: 9rem;
+        height: 7.4rem;
     }
     
     .bloodyLogo {
-        height: 6.6rem;
+        height: 6rem;
         margin-left: 50px;
     }
 }
 
 @media (min-width: 1280px) {
+    .container {
+        height: 7.8rem;
+    }
+
     .bloodyLogo {
-        height: 6.8rem;
+        height: 6.5rem;
     }
 }
 
 
 @media (min-width: 1440px) {
     .bloodyLogo {
-        height: 7rem;
+        height: 6.8rem;
     }
 }
 

@@ -9,7 +9,7 @@ export function SearchBar() {
                 <input className={styles.inputSearch} type="search" id="inputSearch" name="search" placeholder="O que voçê procura?" />
 
                 <label className={styles.lebalSearch} htmlFor="inputSearch">
-                    <IoIosSearch color={"#000"} />
+                    <IoIosSearch className={styles.icon} />
                 </label>
             </form>
         </div>

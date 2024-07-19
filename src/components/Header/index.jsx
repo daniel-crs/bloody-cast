@@ -38,9 +38,10 @@ export function Header() {
 
     return (
         <header className={styles.container}>
-            <div>
+            <a href="/">
                 <img className={styles.bloodyLogo} src={BloodyCastLogo} />
-            </div>
+            </a>
+            
 
             <ScreenRender />
         </header>
