@@ -8,10 +8,10 @@ import { FaWhatsapp } from "react-icons/fa";
 export function Footer() {
     return (
         <div className={styles.container}>
-            <img src={bgImg} alt="" />
+            <img src={bgImg} alt="Background" />
         
             <div className={styles.elements}>
-                <div className={styles.test}>
+                <div className={styles.prominence}>
                     <SiteMap />
 
                     <div className={styles.contact}>
@@ -31,7 +31,7 @@ export function Footer() {
                     <a href="#" className={styles.gmailContainer}>
                         <img src={gmail} alt="Gmail" />
                     </a>
-                    <a href="#" className={styles.whatsappIcon}><FaWhatsapp /></a>
+                    <a href="#" ><FaWhatsapp className={styles.whatsappIcon} /></a>
                 </div>
 
                 <div className={styles.copyright}>
