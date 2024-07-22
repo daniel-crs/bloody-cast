@@ -13,10 +13,8 @@ export function SiteMap() {
 
         if(activeUrl) {
             return (
-                <div className={styles.activeContainer}>
-                    <div className={styles.active}>
-                        <a href={url}>{name}</a>
-                    </div>
+                <div className={styles.active}>
+                    <a href={url}>{name}</a>
                 </div>
             )
         } else if (!activeUrl) {

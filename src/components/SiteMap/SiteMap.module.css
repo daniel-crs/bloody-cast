@@ -25,9 +25,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-row-start: auto;
     row-gap: 25px; 
 
     margin-top: 25px;
+    padding-left: 20px;
 }
 
 .elements a {
@@ -36,19 +38,14 @@
     color: var(--white);
 }
 
-.activeContainer {
-    outline: 1px solid blue;
-}
-
-.active {
-    background-color: var(--yellow-200);
-}
-
 .active a {
     font-size: 1rem;
+    background-color: var(--yellow-200);
+    padding: 5px 10px;
+    border-radius: 5px;
     color: var(--red);
 }
 
-a:hover {
+.active a:hover {
     color: var(--red);
 }
