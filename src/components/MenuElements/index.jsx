@@ -13,6 +13,10 @@ export function MenuElements({ name, screenUrl }) {
             </div>
         )
     } else if (!activeUrl) {
-        return <a href={screenUrl}>{name}</a>
+        return (
+            <div className={styles.container}>
+                <a href={screenUrl}>{name}</a>
+            </div>
+        )
     }
 }

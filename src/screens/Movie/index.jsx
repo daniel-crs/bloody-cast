@@ -6,6 +6,7 @@ import { BackGroundImg } from '../../components/BackGroundImg';
 import { Filter } from '../../components/Filter';
 import { CardMobile } from '../../components/CardMobile'
 import { CardDesktop } from '../../components/CardDesktop';
+import { Footer } from '../../components/Footer';
 import bgImg from "../../assets/pexels-lucadross-5976404.jpg"
 
 export function Movie() {
@@ -50,6 +51,8 @@ export function Movie() {
           </div>
         </div>
       </body>
+
+      <Footer />
     </div>
   );
 }

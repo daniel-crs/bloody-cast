@@ -10,17 +10,18 @@
 .activeContainer a {
     font-size: 24px;
     color: var(--red);
+    text-decoration: none;
     padding-left: 20px;
 }
 
-a {
+.container a {
     font-size: 24px;
     color: var(--white);
     text-decoration: none;
     padding-left: 20px;
 }
 
-a:hover {
+.container a:hover {
     color: var(--red);
 }
 
@@ -38,7 +39,7 @@ a:hover {
         padding-left: 0px;
     }
     
-    a {
+    .container a {
         font-size: 1.2rem;
         padding-left: 0px;
     }
@@ -53,7 +54,7 @@ a:hover {
         font-size: 1.4rem;
     }
     
-    a {
+    .container a {
         font-size: 1.4rem;
     }
 }
@@ -67,7 +68,7 @@ a:hover {
         font-size: 1.5rem;
     }
     
-    a {
+    .container a {
         font-size: 1.5rem;
     }
 }
