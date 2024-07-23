@@ -61,8 +61,12 @@
         height: 500px;
         margin-top: 15px;
         margin-right: auto;
-        margin-left: auto;
-        border-radius: 10px;        
+        margin-left: auto;     
+        border-radius: 8px;
+    }
+
+    .container img {    
+        border-radius: 8px;
     }
 }
 

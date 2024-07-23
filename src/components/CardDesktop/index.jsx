@@ -1,12 +1,10 @@
 import styles from "./CardDesktop.module.css"
 
-import img1 from "../../assets/invocacao-do-mal-4.jpg"
-
-export function CardDesktop({ tag, title, text, author }) {
+export function CardDesktop({ img, tag, title, text, author }) {
     return (
         <div className={styles.container}>
             <div className={styles.imgElement}>
-                <img src={img1} alt="Img" />
+                <img src={img} alt="Img" />
 
                 <div className={styles.tag}>
                     <p>{tag}</p>
