@@ -1,4 +1,4 @@
-import styles from "./PodCast.module.css"
+import styles from "../../Style/StandardContainerStyles.module.css"
 import { useLocation } from "react-router-dom"
 
 import { Header } from "../../components/Header"
@@ -19,7 +19,7 @@ export function PodCast() {
             <body>
                 <BackGroundImg title={"PodCast"} bgImg={bgImg} screenEndPoint={location.pathname} />
 
-                <div className={styles.container}>
+                <div className={styles.standardContainer}>
                     <Filter />
 
                     <CardRender

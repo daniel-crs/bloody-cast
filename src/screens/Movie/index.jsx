@@ -1,4 +1,4 @@
-import styles from './Movie.module.css';
+import styles from "../../Style/StandardContainerStyles.module.css"
 import { useLocation } from "react-router-dom"
 
 import { Header } from "../../components/Header"
@@ -12,6 +12,23 @@ import cardImg from "../../assets/jogos-mortais.jpg"
 export function Movie() {
   const location = useLocation();
   
+  const cards = [
+    {
+      img: cardImg,
+      tag: "Cinema",
+      title: "Jogos mortais e suas referenciasa batman na feira da fruta.",
+      text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de.",
+      author: "Gabriel Zanon"
+    },
+    {
+      img: cardImg,
+      tag: "Cinema",
+      title: "Jogos mortais e suas referenciasa batman na feira da fruta.",
+      text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de.",
+      author: "Gabriel Zanon"
+    }
+  ]
+
   return (
     <div>
       <Header />
@@ -19,16 +36,20 @@ export function Movie() {
       <body>
         <BackGroundImg title={"Cinema"} bgImg={bgImg} screenEndPoint={location.pathname} />
 
-        <div className={styles.container}>
+        <div className={styles.standardContainer}>
           <Filter />
 
-          <CardRender
-            img={cardImg}
-            tag={"Cinema"}  
-            title={"Jogos mortais e suas referenciasa batman na feira da fruta."}
-            text={"É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de."}
-            author={"Gabriel Zanon"}
-          />
+          {cards.map(function(data) {
+            return (
+              <CardRender
+                img={data.img}
+                tag={data.tag}  
+                title={data.title}
+                text={data.text}
+                author={data.author}
+              />
+            )
+          })}
         </div>
       </body>
 
