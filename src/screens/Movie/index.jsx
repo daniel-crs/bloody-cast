@@ -1,41 +1,13 @@
 import styles from './Movie.module.css';
-import { useState, useEffect } from "react";
 
 import { Header } from "../../components/Header"
 import { BackGroundImg } from '../../components/BackGroundImg';
 import { Filter } from '../../components/Filter';
-import { CardMobile } from '../../components/CardMobile'
-import { CardDesktop } from '../../components/CardDesktop';
+import { CardRender } from '../../components/CardRender';
 import { Footer } from '../../components/Footer';
 import bgImg from "../../assets/pexels-lucadross-5976404.jpg"
 
 export function Movie() {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  const addScreenWidth = () => {
-    setScreenWidth(window.innerWidth);
-  }
-
-  useEffect(() => {
-      window.addEventListener('resize', addScreenWidth);
-
-      return() => {
-          window.removeEventListener('resize', addScreenWidth)
-      }
-  }, [screenWidth]);
-
-  const ScreenRender = () => {
-    if (screenWidth < 1024) {
-        return (
-            <CardMobile />
-        )
-    } else {
-        return (
-             <CardDesktop />
-        )
-    }
-  } 
-
   return (
     <div>
       <Header />
@@ -46,9 +18,12 @@ export function Movie() {
         <div className={styles.container}>
           <Filter />
 
-          <div className={styles.cardsContainer}>
-            <ScreenRender />
-          </div>
+          <CardRender 
+            tag={"Cinema"}  
+            title={"Jogos mortais e suas referenciasa batman na feira da fruta."}
+            text={"É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de."}
+            author={"Gabriel Zanon"}
+          />
         </div>
       </body>
 
