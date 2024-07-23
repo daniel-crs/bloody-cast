@@ -46,7 +46,7 @@
     color: var(--red);
 }
 
-.active a:hover {
+.elements a:hover {
     color: var(--red);
 }
 
