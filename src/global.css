@@ -37,4 +37,10 @@ body, input, textarea, button {
 
   --yellow-200: #FAF534;
   --yellow-500: #e0d900;
+
+  --mobile-standard-margin: 40px;
+
+  --container-size-mobile: 85%;
+  --container-size-small-desktop: 90%;
+  --container-size-larg-desktop: 80%;
 }
