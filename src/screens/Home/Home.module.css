@@ -22,3 +22,37 @@
     flex-direction: column;
     gap: 20px;
 }
+
+@media(min-width: 375px) {
+    .cardContainer h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media(min-width: 768px) {
+    .cardContainer h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media(min-width: 1024px) {
+    .cardContainer {
+        width: var(--container-size-small-desktop);
+    }
+
+    .cardContainer h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media(min-width: 1280px) {
+    .cardContainer h3 {
+        font-size: 2rem;
+    }
+}
+
+@media(min-width: 1920px) {
+    .cardContainer {
+        width: var(--container-size-larg-desktop);
+    }
+}

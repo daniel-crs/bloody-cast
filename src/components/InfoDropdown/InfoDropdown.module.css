@@ -6,7 +6,9 @@
 }
 
 .infoTitle p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    width: 90%;
+    margin-left: 2.5px;
 }
 
 .infoTitle .icon {
@@ -19,12 +21,84 @@
     height: auto;
     margin-top: 5px;
     margin-left: 10px;
+    margin-right: 5px;
+}
+
+.dropdown p {
+    font-size: 0.9rem;
 }
 
 .underBar {
-    margin-top: -10px;
+    margin-top: -12.5px;
     width: 100%;
     height: 3px;
     border-radius: 8px;
     background-color: var(--yellow-200);
+}
+
+@media(min-width: 375px) {
+    .infoTitle p {
+        font-size: 1rem;
+    }
+
+    .dropdown p {
+        font-size: 1rem;
+    }
+
+    .underBar {
+        margin-top: -10px;
+    }
+}
+
+@media(min-width: 768px) {
+    .infoTitle p {
+        font-size: 1.2rem;
+    }
+
+    .dropdown {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .dropdown p {
+        font-size: 1.2rem;
+    }
+
+    .underBar {
+        margin-top: -10px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .infoTitle p {
+        font-size: 1.3rem;
+    }
+
+    .dropdown {
+        margin-top: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .dropdown p {
+        font-size: 1.3rem;
+    }
+
+    .underBar {
+        margin-top: -10px;
+    }
+}
+
+@media(min-width: 1280px) {
+    .infoTitle p {
+        font-size: 1.4rem;
+    }
+
+    .dropdown p {
+        font-size: 1.4rem;
+    }
+
+    .underBar {
+        margin-top: -10px;
+    }
 }
