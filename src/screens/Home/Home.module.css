@@ -3,3 +3,22 @@
     align-items: center;
     flex-direction: column;
 }
+
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    width: var(--container-size-mobile);
+    margin-bottom: 40px;
+}
+
+.cardContainer h3 {
+    font-size: 1.2rem;
+}
+
+.dropdownPosition {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
