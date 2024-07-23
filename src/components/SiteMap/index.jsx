@@ -3,8 +3,8 @@ import { useLocation } from "react-router-dom"
 
 export function SiteMap() {
     const menuOptions = [
-        {optionName: "Home", optionUrl: "/"}, {optionName: "PodCast", optionUrl: "/PodCast"}, {optionName: "Cinema", optionUrl: "/Movie"},
-        {optionName: "Livros", optionUrl: "#"}, {optionName: "Musícas", optionUrl: "#"}, {optionName: "Jogos", optionUrl: "#"}
+        {optionName: "Home", optionUrl: "/"}, {optionName: "PodCast", optionUrl: "/PodCast"}, {optionName: "Cinema", optionUrl: "/Cinema"},
+        {optionName: "Livros", optionUrl: "/Livros"}, {optionName: "Músicas", optionUrl: "/Musicas"}, {optionName: "Jogos", optionUrl: "/Jogos"}
     ];
 
     function ShowActivePage({ name, url }) {

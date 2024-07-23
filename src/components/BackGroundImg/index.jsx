@@ -2,6 +2,9 @@ import styles from "./BackGroundImg.module.css"
 
 import { FaMicrophone } from "react-icons/fa";
 import { RiMovie2Fill } from "react-icons/ri";
+import { FaBookSkull } from "react-icons/fa6";
+import { IoMusicalNotesSharp } from "react-icons/io5";
+import { MdGames } from "react-icons/md";
 
 export function BackGroundImg({ title, bgImg, screenEndPoint }) {
     
@@ -10,9 +13,21 @@ export function BackGroundImg({ title, bgImg, screenEndPoint }) {
             return (
                 <FaMicrophone className={styles.icon} />
             )
-        } else if(screenEndPoint === "/Movie") {
+        } else if(screenEndPoint === "/Cinema") {
             return (
                 <RiMovie2Fill className={styles.icon} />
+            )
+        } else if(screenEndPoint === "/Livros") {
+            return (
+                <FaBookSkull className={styles.icon} />
+            )
+        } else if(screenEndPoint === "/Musicas") {
+            return (
+                <IoMusicalNotesSharp className={styles.icon} />
+            )
+        } else if(screenEndPoint === "/Jogos") {
+            return (
+                <MdGames className={styles.icon} />
             )
         }
     }
