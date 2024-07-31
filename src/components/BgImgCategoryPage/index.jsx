@@ -1,4 +1,4 @@
-import styles from "./BackGroundImg.module.css"
+import styles from "./BgImgCategoryPage.module.css"
 
 import { FaMicrophone } from "react-icons/fa";
 import { RiMovie2Fill } from "react-icons/ri";
@@ -6,7 +6,7 @@ import { FaBookSkull } from "react-icons/fa6";
 import { IoMusicalNotesSharp } from "react-icons/io5";
 import { MdGames } from "react-icons/md";
 
-export function BackGroundImg({ title, bgImg, screenEndPoint }) {
+export function BgImgCategoryPage({ title, bgImg, screenEndPoint }) {
     
     const RenderIcon = () => {
         if(screenEndPoint === "/PodCast") {

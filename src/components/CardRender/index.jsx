@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { CardMobile } from '../../components/CardMobile'
 import { CardDesktop } from '../../components/CardDesktop';
 
-export function CardRender({ img, tag, title, text, author }) {
+export function CardRender({ id, img, tag, title, text, author }) {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
     const addScreenWidth = () => {
@@ -22,11 +22,11 @@ export function CardRender({ img, tag, title, text, author }) {
     const ScreenRender = () => {
         if (screenWidth < 1024) {
             return (
-                <CardMobile img={img} tag={tag} title={title} author={author} />
+                <CardMobile id={id} img={img} tag={tag} title={title} author={author} />
             )
         } else {
             return (
-                <CardDesktop img={img} tag={tag} title={title} text={text} author={author} />
+                <CardDesktop id={id} img={img} tag={tag} title={title} text={text} author={author} />
             )
         }
     } 

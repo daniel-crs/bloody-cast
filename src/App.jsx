@@ -6,6 +6,7 @@ import { Movie } from "./screens/Movie";
 import { Books } from "./screens/Books";
 import { Music } from "./screens/Music";
 import { Games } from "./screens/Games";
+import { StandardPost } from "./screens/StandardPost";
 
 import "./global.css"
 
@@ -19,6 +20,7 @@ export function App() {
         <Route path="/Livros" element={<Books />} />
         <Route path="/Musicas" element={<Music />} />
         <Route path="/Jogos" element={<Games />} />
+        <Route path="/Postagem/:id" element={<StandardPost />} />
       </Routes>
     </Router>
   );

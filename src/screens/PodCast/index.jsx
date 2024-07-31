@@ -2,7 +2,7 @@ import styles from "../../Style/StandardContainerStyles.module.css"
 import { useLocation } from "react-router-dom"
 
 import { Header } from "../../components/Header"
-import { BackGroundImg } from "../../components/BackGroundImg"
+import { BgImgCategoryPage } from '../../components/BgImgCategoryPage';
 import { Filter } from "../../components/Filter"
 import { CardRender } from "../../components/CardRender";
 import { Footer } from "../../components/Footer"
@@ -17,7 +17,7 @@ export function PodCast() {
             <Header />
 
             <body>
-                <BackGroundImg title={"PodCast"} bgImg={bgImg} screenEndPoint={location.pathname} />
+                <BgImgCategoryPage title={"PodCast"} bgImg={bgImg} screenEndPoint={location.pathname} />
 
                 <div className={styles.standardContainer}>
                     <Filter />

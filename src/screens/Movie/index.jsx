@@ -2,7 +2,7 @@ import styles from "../../Style/StandardContainerStyles.module.css"
 import { useLocation } from "react-router-dom"
 
 import { Header } from "../../components/Header"
-import { BackGroundImg } from '../../components/BackGroundImg';
+import { BgImgCategoryPage } from '../../components/BgImgCategoryPage';
 import { Filter } from '../../components/Filter';
 import { CardRender } from '../../components/CardRender';
 import { Footer } from '../../components/Footer';
@@ -15,6 +15,7 @@ export function Movie() {
   
   const cards = [
     {
+      id: 1,
       img: cardImg,
       tag: "Cinema",
       title: "Jogos mortais e suas referenciasa batman na feira da fruta.",
@@ -22,6 +23,7 @@ export function Movie() {
       author: "Gabriel Zanon"
     },
     {
+      id: 2,
       img: cardImg2,
       tag: "Cinema",
       title: "O enigma de outro mundo.",
@@ -35,7 +37,7 @@ export function Movie() {
       <Header />
 
       <body>
-        <BackGroundImg title={"Cinema"} bgImg={bgImg} screenEndPoint={location.pathname} />
+        <BgImgCategoryPage title={"Cinema"} bgImg={bgImg} screenEndPoint={location.pathname} />
 
         <div className={styles.standardContainer}>
           <Filter />
@@ -43,6 +45,7 @@ export function Movie() {
           {cards.map(function(data) {
             return (
               <CardRender
+                id={data.id}
                 img={data.img}
                 tag={data.tag}  
                 title={data.title}

@@ -1,6 +1,6 @@
 import styles from "./CardDesktop.module.css"
 
-export function CardDesktop({ img, tag, title, text, author }) {
+export function CardDesktop({ id, img, tag, title, text, author }) {
     return (
         <div className={styles.container}>
             <div className={styles.imgElement}>
@@ -26,7 +26,7 @@ export function CardDesktop({ img, tag, title, text, author }) {
                 </div>
 
                 <div className={styles.btn}>
-                    <a href="#">Ler mais</a>
+                    <a href={`/Postagem/${id}`}>Ler mais</a>
                 </div>
             </div>
         </div>
