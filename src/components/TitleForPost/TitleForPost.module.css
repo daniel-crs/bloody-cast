@@ -37,3 +37,65 @@
     font-size: 0.8rem;
     font-weight: 400;
 }
+
+@media(min-width: 375px) {
+    .title {
+        font-size: 1.3rem;
+    }
+}
+
+@media(min-width: 425px) {
+    .title {
+        font-size: 1.4rem;
+    }
+    
+    .firstPart {
+        font-size: 1rem;
+    }
+    
+    .secondPart {
+        font-size: 1rem;
+    }
+    
+    .time {
+        font-size: 1rem;
+    }
+}
+
+@media(min-width: 768px) {
+    .firstPart {
+        font-size: 1rem;
+    }
+    
+    .secondPart {
+        font-size: 1rem;
+    }
+    
+    .time {
+        font-size: 1rem;
+    }
+}
+
+@media(min-width: 1024px) {
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .firstPart {
+        font-size: 1rem;
+    }
+    
+    .secondPart {
+        font-size: 1rem;
+    }
+    
+    .time {
+        font-size: 1rem;
+    }
+}
+
+@media(min-width: 1440px) {
+    .title {
+        font-size: 2rem;
+    }
+}

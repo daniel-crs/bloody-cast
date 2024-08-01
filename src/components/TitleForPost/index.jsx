@@ -3,7 +3,7 @@ import standarStyle from "../../Style/StandardContainerStyles.module.css"
 
 export function TitleForPost() {
     return (
-        <div className={standarStyle.standardContainer}>
+        <div className={standarStyle.standardContainerForPost}>
             <div className={styles.titleContainer}>
                 <h3 className={styles.title}>
                     O enigma de outro mundo.

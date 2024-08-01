@@ -43,4 +43,8 @@ body, input, textarea, button {
   --container-size-mobile: 85%;
   --container-size-small-desktop: 90%;
   --container-size-larg-desktop: 80%;
+
+  --container-size-mobile-for-post: 85%;
+  --container-size-small-desktop-for-post: 70%;
+  --container-size-larg-desktop-for-post: 60%;
 }

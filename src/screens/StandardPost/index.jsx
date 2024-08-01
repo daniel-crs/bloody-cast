@@ -20,9 +20,9 @@ export function StandardPost() {
 
                 <TitleForPost />
 
-                <div className={standarStyle.standardContainer}>
+                <div className={standarStyle.standardContainerForPost}>
                     <div className={styles.content}>
-                        <div>
+                        <div className={styles.description}>
                             <p>
                                 É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver 
                                 examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário 
@@ -35,7 +35,7 @@ export function StandardPost() {
                             <img src={img} alt="" />
                         </div>
 
-                        <div>
+                        <div className={styles.description}>
                             <p>
                                 É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver 
                                 examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário 
@@ -44,7 +44,7 @@ export function StandardPost() {
                             </p>
                         </div>
 
-                        <div>
+                        <div className={styles.description}>
                             <p>
                                 É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver 
                                 examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário 
@@ -57,7 +57,7 @@ export function StandardPost() {
                             <img src={img} alt="" />
                         </div>
 
-                        <div>
+                        <div className={styles.description}>
                             <p>
                                 É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver 
                                 examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário 
@@ -66,20 +66,22 @@ export function StandardPost() {
                             </p>
                         </div>
                         
-                        <Score />
+                        <div className={styles.underBody}>
+                            <Score />
 
-                        <div className={styles.authorContainer}>
-                            <div className={styles.authorImg}>
-                                <img src={img2} alt="" />
-                            </div>
-
-                            <div className={styles.authorInfo}>
-                                <div className={styles.author}>
-                                    <p className={styles.firstPart}>por</p>
-                                    <p className={styles.secondPart}>Gabriel Zanon</p>
+                            <div className={styles.authorContainer}>
+                                <div className={styles.authorImg}>
+                                    <img src={img2} alt="" />
                                 </div>
-                                
-                                <time className={styles.time} title="11 de Maio as 08:13" dateTime="2022-05-11 08:13:30">Publicado em 12/04/2023</time>
+
+                                <div className={styles.authorInfo}>
+                                    <div className={styles.author}>
+                                        <p className={styles.firstPart}>por</p>
+                                        <p className={styles.secondPart}>Gabriel Zanon</p>
+                                    </div>
+                                    
+                                    <time className={styles.time} title="11 de Maio as 08:13" dateTime="2022-05-11 08:13:30">Publicado em 12/04/2023</time>
+                                </div>
                             </div>
                         </div>
                     </div>

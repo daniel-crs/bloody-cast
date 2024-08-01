@@ -5,14 +5,29 @@
     margin-right: auto;
 }
 
+.standardContainerForPost {
+    width: var(--container-size-mobile);
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media(min-width: 1024px) {
     .standardContainer {
         width: var(--container-size-small-desktop);
+    }
+
+    .standardContainerForPost {
+        width: var(--container-size-small-desktop-for-post);
     }
 }
 
 @media(min-width: 1920px) {
     .standardContainer {
         width: var(--container-size-larg-desktop);
+    }
+
+    .standardContainerForPost {
+        width: var(--container-size-larg-desktop-for-post);
     }
 }

@@ -33,3 +33,71 @@
     font-size: 2.2rem;
     color: var(--yellow-200);
 }
+
+@media(min-width: 768px) {
+    .scoreTitle {
+        margin-bottom: 40px;
+    }
+
+    .scoreTitle h3 {
+        font-size: 1.4rem;
+    }
+
+    .underBar {
+        width: 38vw;
+    }
+}
+
+@media(min-width: 1024px) {
+    .scoreTitle {
+        margin-bottom: 40px;
+    }
+
+    .scoreTitle h3 {
+        font-size: 1.6rem;
+    }
+
+    .underBar {
+        width: 32vw;
+    }
+
+    .icons {
+        font-size: 2.4rem;
+    }
+}
+
+@media(min-width: 1440px) {
+    .scoreTitle {
+        margin-bottom: 40px;
+    }
+
+    .scoreTitle h3 {
+        font-size: 1.6rem;
+    }
+
+    .underBar {
+        width: 28vw;
+    }
+
+    .icons {
+        font-size: 2.4rem;
+    }
+}
+
+@media(min-width: 1920px) {
+    .scoreTitle {
+        margin-bottom: 40px;
+    }
+
+    .scoreTitle h3 {
+        font-size: 1.6rem;
+    }
+
+    .underBar {
+        width: 22vw;
+    }
+
+    .icons {
+        font-size: 2.4rem;
+    }
+}
