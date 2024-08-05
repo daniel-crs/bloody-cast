@@ -1,6 +1,17 @@
 import styles from "./CardDesktop.module.css"
+import { useState, useEffect } from "react";
 
 export function CardDesktop({ id, img, tag, title, text, author }) {
+    const [postUrl, setPostUrl ] = useState("");
+    
+    useEffect(() => {
+        if(tag == "PodCast") {
+            setPostUrl(`/Postagem/PodCast/${id}`)
+        } else {
+            setPostUrl(`/Postagem/${tag}/${id}`)
+        }
+    }, [id, tag]);
+
     return (
         <div className={styles.container}>
             <div className={styles.imgElement}>
@@ -26,7 +37,7 @@ export function CardDesktop({ id, img, tag, title, text, author }) {
                 </div>
 
                 <div className={styles.btn}>
-                    <a href={`/Postagem/${id}`}>Ler mais</a>
+                    <a href={postUrl}>Ler mais</a>
                 </div>
             </div>
         </div>

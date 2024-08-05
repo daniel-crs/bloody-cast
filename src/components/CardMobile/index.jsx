@@ -1,11 +1,22 @@
 import styles from "./CardMobile.module.css"
+import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom"
 
 export function CardMobile({ id, img, tag, title, author }) {
+    const [postUrl, setPostUrl ] = useState("");
+    
+    useEffect(() => {
+        if(tag == "PodCast") {
+            setPostUrl(`/Postagem/PodCast/${id}`)
+        } else {
+            setPostUrl(`/Postagem/${tag}/${id}`)
+        }
+    }, [id, tag]);
+
     return (
         <div className={styles.container}>
-            <Link to={`/Postagem/${id}`}>
+            <Link to={postUrl}>
                 <div className={styles.imgElement}>
                     <img src={img} alt="Img" />
 
@@ -16,7 +27,7 @@ export function CardMobile({ id, img, tag, title, author }) {
             </Link>
 
             <Link
-                to={`/Postagem/${id}`}
+                to={postUrl}
                 style={{ textDecoration: "none" }}
             >
                 <div className={styles.infoContainer}>

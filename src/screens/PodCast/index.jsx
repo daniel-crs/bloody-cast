@@ -23,6 +23,7 @@ export function PodCast() {
                     <Filter />
 
                     <CardRender
+                        id={1}
                         img={cardImg}
                         tag={"PodCast"}  
                         title={"O vale da estranheza presente em mad god."}

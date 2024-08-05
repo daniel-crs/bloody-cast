@@ -42,7 +42,6 @@ export function Header() {
                 <img className={styles.bloodyLogo} src={BloodyCastLogo} />
             </a>
             
-
             <ScreenRender />
         </header>
     )
