@@ -1,0 +1,103 @@
+.scoreTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.scoreTitle h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding-left: 2.5px;
+}
+
+.underBar {
+    width: 46vw;
+    height: 3px;
+    border-radius: 8px;
+    background-color: var(--yellow-200);
+}
+
+.scoreContainer {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icons {
+    display: flex;
+    gap: 2.5px;
+
+    font-size: 2.2rem;
+    color: var(--yellow-200);
+}
+
+@media(min-width: 768px) {
+    .scoreTitle {
+        margin-bottom: 40px;
+    }
+
+    .scoreTitle h3 {
+        font-size: 1.4rem;
+    }
+
+    .underBar {
+        width: 38vw;
+    }
+}
+
+@media(min-width: 1024px) {
+    .scoreTitle {
+        margin-bottom: 40px;
+    }
+
+    .scoreTitle h3 {
+        font-size: 1.6rem;
+    }
+
+    .underBar {
+        width: 32vw;
+    }
+
+    .icons {
+        font-size: 2.4rem;
+    }
+}
+
+@media(min-width: 1440px) {
+    .scoreTitle {
+        margin-bottom: 40px;
+    }
+
+    .scoreTitle h3 {
+        font-size: 1.6rem;
+    }
+
+    .underBar {
+        width: 28vw;
+    }
+
+    .icons {
+        font-size: 2.4rem;
+    }
+}
+
+@media(min-width: 1920px) {
+    .scoreTitle {
+        margin-bottom: 40px;
+    }
+
+    .scoreTitle h3 {
+        font-size: 1.6rem;
+    }
+
+    .underBar {
+        width: 22vw;
+    }
+
+    .icons {
+        font-size: 2.4rem;
+    }
+}

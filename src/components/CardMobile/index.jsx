@@ -1,29 +1,47 @@
 import styles from "./CardMobile.module.css"
+import { useState, useEffect } from "react";
 
-import img1 from "../../assets/invocacao-do-mal-4.jpg"
+import { Link } from "react-router-dom"
 
-export function CardMobile() {
+export function CardMobile({ id, img, tag, title, author }) {
+    const [postUrl, setPostUrl ] = useState("");
+    
+    useEffect(() => {
+        if(tag == "PodCast") {
+            setPostUrl(`/Postagem/PodCast/${id}`)
+        } else {
+            setPostUrl(`/Postagem/${tag}/${id}`)
+        }
+    }, [id, tag]);
+
     return (
         <div className={styles.container}>
-            <div className={styles.imgElement}>
-                <img src={img1} alt="" />
+            <Link to={postUrl}>
+                <div className={styles.imgElement}>
+                    <img src={img} alt="Img" />
 
-                <div className={styles.tag}>
-                    <p>Cinema</p>
+                    <div className={styles.tag}>
+                        <p>{tag}</p>
+                    </div>
                 </div>
-            </div>
+            </Link>
 
-            <div className={styles.infoContainer}>
-                <h3 className={styles.title}>
-                    O vale da estranheza presente em mad god.
-                </h3>
-                
+            <Link
+                to={postUrl}
+                style={{ textDecoration: "none" }}
+            >
+                <div className={styles.infoContainer}>
+                    <h3 className={styles.title}>
+                        {title}
+                    </h3>
+                    
 
-                <div className={styles.author}>
-                    <p className={styles.firstPart}>por</p>
-                    <p className={styles.secondPart}>Gabriel Zanon</p>
+                    <div className={styles.author}>
+                        <p className={styles.firstPart}>por</p>
+                        <p className={styles.secondPart}>{author}</p>
+                    </div>
                 </div>
-            </div>
+            </Link>
 
             <span className={styles.underBar}></span>
         </div>

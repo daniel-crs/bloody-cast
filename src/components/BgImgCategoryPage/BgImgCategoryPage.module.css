@@ -61,19 +61,23 @@
         height: 500px;
         margin-top: 15px;
         margin-right: auto;
-        margin-left: auto;
-        border-radius: 10px;        
+        margin-left: auto;     
+        border-radius: 8px;
+    }
+
+    .container img {    
+        border-radius: 8px;
     }
 }
 
 @media(min-width: 1440px) {
-    .titleContainer {
+    .container {
         height: 550px;      
     }
 }
 
 @media(min-width: 1920px) {
-    .titleContainer {
+    .container {
         width: 80%;      
     }
 }
