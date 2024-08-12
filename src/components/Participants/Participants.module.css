@@ -1,0 +1,69 @@
+.authorContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.authorImg {
+    background: var(--gray-400);
+    width: 72px;
+    height: 72px;
+    border-radius: 100px;
+    border: 1px solid var(--black);
+    outline: 2px solid var(--yellow-200);
+}
+
+.authorImg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100px;
+}
+
+.authorInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.author {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    font-size: 0.9rem;
+}
+
+.name {
+    color: var(--yellow-200);
+}
+
+@media(min-width: 768px) {
+    .author {
+        font-size: 1rem;
+    }
+
+    .authorImg {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .author {
+        font-size: 1.2rem;
+    }
+}
+
+@media(min-width: 1440px) {
+    .author {
+        font-size: 1.3rem;
+    }
+
+    .authorImg {
+        width: 100px;
+        height: 100px;
+    }
+}
