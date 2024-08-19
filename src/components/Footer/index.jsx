@@ -1,4 +1,5 @@
 import styles from "./Footer.module.css"
+import { useState, useEffect } from "react"
 
 import bgImg from "../../assets/pexels-fireberrytech-2848647.jpg"
 import { SiteMap } from "../SiteMap"
@@ -6,6 +7,17 @@ import gmail from "../../assets/gmail-icon.svg"
 import { FaWhatsapp } from "react-icons/fa";
 
 export function Footer() {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const url = "http://localhost:1337/api/contacts";
+        fetch(url)
+        .then((res) => res.json())
+        .then((contact) => {
+            setData(contact.data);
+        });
+    }, []);
+    
     return (
         <div className={styles.container}>
             <img src={bgImg} alt="Background" />
@@ -20,10 +32,12 @@ export function Footer() {
                             <span className={styles.underBar}></span>
                         </div>
 
-                        <div className={styles.info}>
-                            <p>Email: bloodycast2024@gmail.com</p>
-                            <p>Telefone: 99999-9999</p>
-                        </div>
+                        {data?.map((contact) => (
+                            <div className={styles.info}>
+                                <p>E-mail: {contact.attributes.email}</p>
+                                <p>Numero: {contact.attributes.number}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
 

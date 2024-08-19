@@ -1,5 +1,7 @@
 import styles from "./StandardPodcastPost.module.css"
 import standarStyle from "../../Style/StandardContainerStyles.module.css"
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
 
 import { Header } from "../../components/Header"
 import { BgImgPostPage } from "../../components/BgImgPostPage"
@@ -11,6 +13,25 @@ import { Footer } from "../../components/Footer"
 import img2 from "../../assets/andras.webp"
 
 export function StandardPodcastPost() {
+    const { id } = useParams();
+    const [data, setData] = useState();
+    const [img, setImg] = useState();
+
+    useEffect(() => {
+        const url = "http://localhost:1337/api/podcasts/" + id + "?populate=*";
+        fetch(url)
+        .then((res) => res.json())
+        .then((post) => {
+            const vetorImgs = post.data.attributes.img.data.map(
+                (img) => "http://localhost:1337" + img.attributes.url
+              );
+            setData(post.data);
+            setImg(vetorImgs);
+        });
+    }, [id]);
+
+    console.log(data);
+
     const participante = [
         {
           img: img2,
@@ -30,9 +51,9 @@ export function StandardPodcastPost() {
         <div>
             <Header />
             <div>
-                <BgImgPostPage />
+                <BgImgPostPage tag={data?.attributes?.tag} img={img} />
 
-                <TitleForPost />
+                <TitleForPost title={data?.attributes?.title} author={data?.attributes?.author} data={data?.attributes?.data} />
 
                 <div className={standarStyle.standardContainerForPost}>
                     <div className={styles.content}>
@@ -42,10 +63,7 @@ export function StandardPodcastPost() {
 
                         <div className={styles.description}>
                             <p>
-                                É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver 
-                                examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário 
-                                de "Conteúdo aqui, conteúdo aqui", fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares 
-                                de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão,
+                                {data?.attributes?.description}
                             </p>
                         </div>
 

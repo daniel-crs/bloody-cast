@@ -18,22 +18,22 @@ export function Slider() {
 ];
 
     return (
-        <div className={styles.sliderContainer}>
-          <Swiper 
-            pagination={true}
-            Autoplay={true}
-            modules={[Pagination, Autoplay]}
-            className={styles.swiper}
-            style={{
-              "--swiper-pagination-color": "var(--red)",
-              "--swiper-pagination-bullet-inactive-color": "var(--white)",
-              "--swiper-pagination-bullet-size": "8px",
-              "--swiper-pagination-bullet-horizontal-gap": "5px"
-            }}
-          >
-            {sliderOptions.map(function(data){
-              return(
-                <SwiperSlide className={styles.swiperSlide}>
+        <Swiper 
+          pagination={true}
+          Autoplay={true}
+          modules={[Pagination, Autoplay]}
+          className={styles.sliderContainer}
+          style={{
+            "--swiper-pagination-color": "var(--red)",
+            "--swiper-pagination-bullet-inactive-color": "var(--white)",
+            "--swiper-pagination-bullet-size": "8px",
+            "--swiper-pagination-bullet-horizontal-gap": "5px"
+          }}
+        >
+          {sliderOptions.map(function(data){
+            return(
+              <SwiperSlide>
+                <div className={styles.container}>
                   <img src={data.imgURL} />
 
                   <div className={styles.infoContainer}>
@@ -45,10 +45,10 @@ export function Slider() {
                       {data.title}
                     </h3>
                   </div>
-                </SwiperSlide>
-              )
-            })}
-          </Swiper>
-        </div>
+                </div>
+              </SwiperSlide>
+            )
+          })}
+        </Swiper>
     )
 }

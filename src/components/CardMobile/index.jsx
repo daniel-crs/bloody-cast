@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 export function CardMobile({ id, img, tag, title, author }) {
     const [postUrl, setPostUrl ] = useState("");
-    
+
     useEffect(() => {
         if(tag == "PodCast") {
             setPostUrl(`/Postagem/PodCast/${id}`)

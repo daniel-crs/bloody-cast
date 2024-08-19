@@ -20,7 +20,7 @@ export function Home() {
       <body className={styles.bodyContainer}>
         <Slider />
 
-        <FeedBackBanner />
+        {/* <FeedBackBanner />
 
         <div className={styles.cardContainer}>
             <h3>
@@ -33,10 +33,10 @@ export function Home() {
                 )
               })}
             </div>
-        </div>
+        </div> */}
       </body>
       
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
