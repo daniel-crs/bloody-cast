@@ -16,6 +16,7 @@ export function StandardPodcastPost() {
     const { id } = useParams();
     const [data, setData] = useState();
     const [img, setImg] = useState();
+    const [audio, setAudio] = useState();
 
     useEffect(() => {
         const url = "http://localhost:1337/api/podcasts/" + id + "?populate=*";
@@ -25,12 +26,15 @@ export function StandardPodcastPost() {
             const vetorImgs = post.data.attributes.img.data.map(
                 (img) => "http://localhost:1337" + img.attributes.url
               );
+
+              const vetorAudio = post.data.attributes.audio.data.map(
+                (audio) => "http://localhost:1337" + audio.attributes.url
+              );
             setData(post.data);
             setImg(vetorImgs);
+            setAudio(vetorAudio);
         });
     }, [id]);
-
-    console.log(data);
 
     const participante = [
         {
@@ -58,7 +62,7 @@ export function StandardPodcastPost() {
                 <div className={standarStyle.standardContainerForPost}>
                     <div className={styles.content}>
                         <div className={styles.elements}>
-                            <PodcastPlayer />
+                            <PodcastPlayer audio={audio} />
                         </div>
 
                         <div className={styles.description}>
