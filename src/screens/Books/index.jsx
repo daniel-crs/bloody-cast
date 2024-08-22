@@ -1,5 +1,6 @@
 import styles from "../../Style/StandardContainerStyles.module.css"
 import { useLocation } from "react-router-dom"
+import { useState, useEffect } from "react";
 
 import { Header } from "../../components/Header"
 import { BgImgCategoryPage } from '../../components/BgImgCategoryPage';
@@ -7,20 +8,20 @@ import { Filter } from '../../components/Filter';
 import { CardRender } from '../../components/CardRender';
 import { Footer } from '../../components/Footer';
 import bgImg from "../../assets/pexels-lucadross-5976404.jpg"
-import cardImg from "../../assets/A-guerra-dos-mundos.webp"
 
 export function Books() {
     const location = useLocation();
   
-    const cards = [
-        {
-        img: cardImg,
-        tag: "Livros",
-        title: "Como as caixa de águas inspirou a criação dos Tripods de guerra dos mundos.",
-        text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de.",
-        author: "amigo do Zanon"
-        },
-    ]
+    const [data, setData] = useState([]);
+
+  useEffect(() => {
+      const url = "http://localhost:1337/api/livros?populate=*";
+      fetch(url)
+      .then((res) => res.json())
+      .then((post) => {
+          setData(post.data);
+      });
+  }, []);
 
     return (
         <div>
@@ -32,17 +33,16 @@ export function Books() {
                 <div className={styles.standardContainer}>
                 <Filter />
 
-                {cards.map(function(data) {
-                    return (
+                {data?.map((post) => (
                     <CardRender
-                        img={data.img}
-                        tag={data.tag}  
-                        title={data.title}
-                        text={data.text}
-                        author={data.author}
+                        id={post.id}
+                        img={"http://localhost:1337" + post.attributes.mainImg.data.attributes.url}
+                        tag={post.attributes.tag}  
+                        title={post.attributes.title}
+                        text={post.attributes.description}
+                        author={post.attributes.author}
                     />
-                    )
-                })}
+                ))}
                 </div>
             </body>
 

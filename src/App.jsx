@@ -17,7 +17,7 @@ export function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/PodCast" element={<PodCast />} />
-        <Route path="/Cinema" element={<Movie />} />
+        <Route path="/Filmes" element={<Movie />} />
         <Route path="/Livros" element={<Books />} />
         <Route path="/Musicas" element={<Music />} />
         <Route path="/Jogos" element={<Games />} />

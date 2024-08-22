@@ -10,59 +10,42 @@ import { PodcastPlayer } from "../../components/PodcastPlayer"
 import { Participants } from "../../components/Participants"
 import { Footer } from "../../components/Footer"
 
-import img2 from "../../assets/andras.webp"
-
 export function StandardPodcastPost() {
     const { id } = useParams();
     const [data, setData] = useState();
-    const [img, setImg] = useState();
-    const [audio, setAudio] = useState();
+    const [participantsData, setParticipantsData] = useState([])
 
     useEffect(() => {
         const url = "http://localhost:1337/api/podcasts/" + id + "?populate=*";
+
         fetch(url)
         .then((res) => res.json())
         .then((post) => {
-            const vetorImgs = post.data.attributes.img.data.map(
-                (img) => "http://localhost:1337" + img.attributes.url
-              );
+            post.data.attributes.participants.data.map((content) => {
+                fetch(`http://localhost:1337/api/participants/${content.id}?populate=*`)
+                .then((res) => res.json())
+                .then((participantContent) => {
+                    setParticipantsData(participantsData => [ ...participantsData, participantContent ]);
+                })
+            })
 
-              const vetorAudio = post.data.attributes.audio.data.map(
-                (audio) => "http://localhost:1337" + audio.attributes.url
-              );
             setData(post.data);
-            setImg(vetorImgs);
-            setAudio(vetorAudio);
         });
-    }, [id]);
 
-    const participante = [
-        {
-          img: img2,
-          name: "Gabriel Zanon"
-        },
-        {
-          img: img2,
-          name: "Gabriel Zanon"
-        },
-        {
-          img: img2,
-          name: "Gabriel Zanon"
-        }
-      ]
+    }, [id]);
 
     return (
         <div>
             <Header />
             <div>
-                <BgImgPostPage tag={data?.attributes?.tag} img={img} />
+                <BgImgPostPage tag={data?.attributes?.tag} img={"http://localhost:1337" + data?.attributes?.img?.data?.attributes?.url} />
 
                 <TitleForPost title={data?.attributes?.title} author={data?.attributes?.author} data={data?.attributes?.data} />
 
                 <div className={standarStyle.standardContainerForPost}>
                     <div className={styles.content}>
                         <div className={styles.elements}>
-                            <PodcastPlayer audio={audio} />
+                            <PodcastPlayer audio={"http://localhost:1337" + data?.attributes?.audio?.data?.attributes?.url} />
                         </div>
 
                         <div className={styles.description}>
@@ -78,11 +61,9 @@ export function StandardPodcastPost() {
                             </div>
 
                             <div className={styles.participantsContainer}>
-                                {participante.map(function(data) {
-                                    return (
-                                        <Participants img={data.img} name={data.name} />
-                                    )
-                                })}
+                            {participantsData.map((participant) => (
+                                <Participants profile={"http://localhost:1337" + participant?.data?.attributes?.profile?.data?.attributes?.url} name={participant?.data?.attributes?.name} />  
+                            ))}  
                             </div>
                         </div>
                     </div>

@@ -18,8 +18,8 @@ export function PodCast() {
         const url = "http://localhost:1337/api/podcasts?populate=*";
         fetch(url)
         .then((res) => res.json())
-        .then((podcastPosts) => {
-            setData(podcastPosts.data);
+        .then((post) => {
+            setData(post.data);
         });
     }, []);
 
@@ -33,14 +33,14 @@ export function PodCast() {
                 <div className={styles.standardContainer}>
                     <Filter />
 
-                    {data?.map((podcastPosts) => (     
+                    {data?.map((post) => (     
                         <CardRender
-                            id={podcastPosts.id}
-                            img={podcastPosts.attributes.img}
-                            tag={podcastPosts.attributes.tag}  
-                            title={podcastPosts.attributes.title}
-                            text={podcastPosts.attributes.description}
-                            author={podcastPosts.attributes.author}
+                            id={post.id}
+                            img={"http://localhost:1337" + post.attributes.img.data.attributes.url}
+                            tag={post.attributes.tag}  
+                            title={post.attributes.title}
+                            text={post.attributes.description}
+                            author={post.attributes.author}
                         />
                     ))}
 
