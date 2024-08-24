@@ -35,6 +35,7 @@ export function PodCast() {
 
                     {data?.map((post) => (     
                         <CardRender
+                            key={post.id}
                             id={post.id}
                             img={"http://localhost:1337" + post.attributes.img.data.attributes.url}
                             tag={post.attributes.tag}  

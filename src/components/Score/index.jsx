@@ -50,7 +50,7 @@ export function Score({ score }) {
 
     return (
         <div className={styles.scoreTitle}>
-            <h3>Mais Recentes</h3>
+            <h3>Notas</h3>
             <span className={styles.underBar}></span>
 
             <div className={styles.scoreContainer}>

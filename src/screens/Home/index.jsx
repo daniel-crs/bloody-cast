@@ -36,7 +36,7 @@ export function Home() {
     <div>
       <Header />
 
-      <body className={styles.bodyContainer}>
+      <div className={styles.bodyContainer}>
         <Slider />
 
         <MovieSlider screenWidth={screenWidth} />
@@ -51,11 +51,11 @@ export function Home() {
             </h3> 
             <div className={styles.dropdownPosition}>
               {extraInfo?.data?.map((post) => (
-                <InfoDropdown title={post.attributes.title} description={post.attributes.description} />
+                <InfoDropdown key={post.id} title={post.attributes.title} description={post.attributes.description} />
               ))}
             </div>
         </div>
-      </body>
+      </div>
       
      <Footer />
     </div>

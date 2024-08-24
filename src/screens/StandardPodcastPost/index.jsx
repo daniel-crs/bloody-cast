@@ -62,7 +62,7 @@ export function StandardPodcastPost() {
 
                             <div className={styles.participantsContainer}>
                             {participantsData.map((participant) => (
-                                <Participants profile={"http://localhost:1337" + participant?.data?.attributes?.profile?.data?.attributes?.url} name={participant?.data?.attributes?.name} />  
+                                <Participants key={participant?.data?.id} profile={"http://localhost:1337" + participant?.data?.attributes?.profile?.data?.attributes?.url} name={participant?.data?.attributes?.name} />  
                             ))}  
                             </div>
                         </div>

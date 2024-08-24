@@ -32,7 +32,7 @@ export function SiteMap() {
             <div className={styles.elements}>
                 {menuOptions.map(function(data) {
                     return (
-                        <ShowActivePage name={data.optionName} url={data.optionUrl} />
+                        <ShowActivePage key={data.optionName} name={data.optionName} url={data.optionUrl} />
                     )
                 })}
             </div>

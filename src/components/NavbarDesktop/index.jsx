@@ -8,7 +8,7 @@ export function NavbarDesktop({ menuOptions }) {
         <nav className={styles.menuContainer}>
             {menuOptions.map(function(data) {
                 return (
-                    <MenuElements name={data.optionName} screenUrl={data.optionUrl} />
+                    <MenuElements key={data.optionName} name={data.optionName} screenUrl={data.optionUrl} />
                 )
             })}
 

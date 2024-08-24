@@ -1,7 +1,6 @@
 import styles from "./Footer.module.css"
 import { useState, useEffect } from "react"
 
-import bgImg from "../../assets/pexels-fireberrytech-2848647.jpg"
 import { SiteMap } from "../SiteMap"
 import gmail from "../../assets/gmail-icon.svg"
 import instagram from "../../assets/instagram.png"
@@ -23,7 +22,7 @@ export function Footer() {
         <div className={styles.container}>
         
             {data?.map((contact) => (
-                <div className={styles.elements}>
+                <div key={contact.id} className={styles.elements}>
                     <div className={styles.prominence}>
                         <SiteMap />
 
@@ -35,7 +34,7 @@ export function Footer() {
 
                             <div className={styles.info}>
                                 <p>E-mail: {contact.attributes.email}</p>
-                                <p>Numero: {contact.attributes.number}</p>
+                                <p>Numero: {contact.attributes.instagram}</p>
                             </div>
                         </div>
                     </div>
@@ -46,10 +45,10 @@ export function Footer() {
                         </a>
 
                         <a href="/"className={styles.logo}>
-                            <img src={BloodyCastLogo} />
+                            <img src={BloodyCastLogo} alt="Logo" />
                         </a>
                         
-                        <a href="https://www.instagram.com/festadomorangodebrasilia/?hl=pt" className={styles.instagramContainer}>
+                        <a href={contact.attributes.instagram} className={styles.instagramContainer}>
                             <img src={instagram} alt="instagram" />
                         </a>
                     </div>
