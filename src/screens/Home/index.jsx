@@ -1,8 +1,8 @@
 import styles from './Home.module.css';
 import { useState, useEffect } from "react";
 
-
 import { Header } from "../../components/Header"
+import { BgImgHome } from '../../components/BgImgHome';
 import { Slider } from '../../components/Slider';
 import { MovieSlider } from '../../components/CategorySliders/MovieSlider';
 import { BookSlider } from '../../components/CategorySliders/BookSlider';
@@ -30,14 +30,13 @@ export function Home() {
         .then((res) => res.json())
         .then((extraInfo) => setExtraInfo(extraInfo));
       }, []);
-
     
   return (
     <div>
       <Header />
 
       <div className={styles.bodyContainer}>
-        <Slider />
+        <BgImgHome />
 
         <MovieSlider screenWidth={screenWidth} />
 

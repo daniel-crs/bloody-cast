@@ -1,6 +1,7 @@
 .swiperContainer{
     width: var(--container-size-mobile);
     margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .swiper {
