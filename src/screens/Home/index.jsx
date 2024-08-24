@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 
 import { Header } from "../../components/Header"
 import { Slider } from '../../components/Slider';
-import { MovieSlider } from '../../components/MovieSlider';
+import { MovieSlider } from '../../components/CategorySliders/MovieSlider';
+import { BookSlider } from '../../components/CategorySliders/BookSlider';
 import { FeedBackBanner } from '../../components/FeedBackBanner';
 import { InfoDropdown } from '../../components/InfoDropdown';
 import { Footer } from '../../components/Footer';
@@ -36,18 +37,11 @@ export function Home() {
       <Header />
 
       <body className={styles.bodyContainer}>
+        <Slider />
+
         <MovieSlider screenWidth={screenWidth} />
 
-        {/* {movies?.data?.map((post) => (
-            <CardRender
-                id={post.id}
-                img={"http://localhost:1337" + post.attributes.mainImg.data.attributes.url}
-                tag={post.attributes.tag}  
-                title={post.attributes.title}
-                text={post.attributes.description}
-                author={post.attributes.author}
-            />
-        ))} */}
+        {/* <BookSlider screenWidth={screenWidth} /> */}
 
        <FeedBackBanner />
 

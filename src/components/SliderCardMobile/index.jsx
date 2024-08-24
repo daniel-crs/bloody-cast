@@ -2,8 +2,6 @@ import styles from "./SliderCardMobile.module.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 
-import bgimg from "../../assets/Enigma-de-outro-mundo.webp"
-
 export function SliderCardMobile({ id, img, tag, title, author }) {
     const [postUrl, setPostUrl ] = useState("");
 
@@ -19,10 +17,10 @@ export function SliderCardMobile({ id, img, tag, title, author }) {
         <div className={styles.container}>
             <Link to={postUrl}>
                 <div className={styles.imgElement}>
-                    <img src={bgimg} alt="Img" />
+                    <img src={img} alt="Img" />
 
                     <div className={styles.tag}>
-                        <p>Filmes</p>
+                        <p>{tag}s</p>
                     </div>
                 </div>
             </Link>
@@ -33,13 +31,13 @@ export function SliderCardMobile({ id, img, tag, title, author }) {
             >
                 <div className={styles.infoContainer}>
                     <h3 className={styles.title}>
-                        O trem de outro mundo
+                        {title}
                     </h3>
                     
 
                     <div className={styles.author}>
                         <p className={styles.firstPart}>por</p>
-                        <p className={styles.secondPart}>Gabriel</p>
+                        <p className={styles.secondPart}>{author}</p>
                     </div>
                 </div>
             </Link>

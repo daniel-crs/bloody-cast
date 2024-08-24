@@ -32,20 +32,20 @@ export function Slider() {
         >
           {sliderOptions.map(function(data){
             return(
-              <SwiperSlide>
-                <div className={styles.container}>
-                  <img src={data.imgURL} />
+              <SwiperSlide className={styles.container}>
+                  <div className={styles.imgElement}>
+                      <img src={data.imgURL} alt="Img" />
 
-                  <div className={styles.infoContainer}>
-                    <div className={styles.tag}>
-                      <p>{data.tag}</p>
-                    </div>
+                      <div className={styles.info}>
+                        <div className={styles.tag}>
+                            <p>{data.tag}s</p>
+                        </div>
 
-                    <h3>
-                      {data.title}
-                    </h3>
+                        <h3>
+                          {data.title}
+                        </h3>
+                      </div>
                   </div>
-                </div>
               </SwiperSlide>
             )
           })}

@@ -40,7 +40,7 @@ export function StandardPodcastPost() {
             <div>
                 <BgImgPostPage tag={data?.attributes?.tag} img={"http://localhost:1337" + data?.attributes?.img?.data?.attributes?.url} />
 
-                <TitleForPost title={data?.attributes?.title} author={data?.attributes?.author} data={data?.attributes?.data} />
+                <TitleForPost title={data?.attributes?.title} author={data?.attributes?.author} data={data?.attributes?.date} />
 
                 <div className={standarStyle.standardContainerForPost}>
                     <div className={styles.content}>

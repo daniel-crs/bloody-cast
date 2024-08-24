@@ -1,19 +1,19 @@
-import styles from "./MovieSlider.module.css"
+import styles from "../SliderStyles.module.css"
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 
-import { SliderCardMobile } from '../../components/SliderCardMobile';
-import { SliderCardDesktop } from '../../components/SliderCardDesktop';
+import { SliderCardMobile } from '../../../components/SliderCardMobile';
+import { SliderCardDesktop } from '../../../components/SliderCardDesktop';
 
 export function MovieSlider({ screenWidth }) {
-    const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
-    useEffect(() => {
-        fetch("http://localhost:1337/api/filmes?populate=*")
-          .then((res) => res.json())
-          .then((movies) => setMovies(movies));
-      }, []);
+  useEffect(() => {
+      fetch("http://localhost:1337/api/filmes?populate=*")
+        .then((res) => res.json())
+        .then((movies) => setMovies(movies));
+    }, []);
 
     const ScreenRender = () => {
         if (screenWidth < 768) {
@@ -33,12 +33,18 @@ export function MovieSlider({ screenWidth }) {
                 }}
                 className={styles.swiper}
               >
-                <SwiperSlide className={styles.swiperSlider}>
-                  <SliderCardMobile/>
-                </SwiperSlide>
-                <SwiperSlide className={styles.swiperSlider}>
-                  <SliderCardMobile/>
-                </SwiperSlide>
+                {movies?.data?.filter(post => post.attributes.destaque === true).map((post) => (
+                  <SwiperSlide key={post.id} className={styles.swiperSlider}>
+                    <SliderCardMobile
+                      id={post.id}
+                      img={"http://localhost:1337" + post.attributes.mainImg.data.attributes.url}
+                      tag={post.attributes.tag}  
+                      title={post.attributes.title}
+                      text={post.attributes.description}
+                      author={post.attributes.author}
+                    />
+                  </SwiperSlide>
+                ))}
               </Swiper>
             )
         } else if (screenWidth < 1280) {
@@ -58,15 +64,18 @@ export function MovieSlider({ screenWidth }) {
                 }}
                 className={styles.swiper}
               >
-                <SwiperSlide className={styles.swiperSlider}>
-                  <SliderCardDesktop />
-                </SwiperSlide>
-                <SwiperSlide className={styles.swiperSlider}>
-                  <SliderCardDesktop />
-                </SwiperSlide>
-                <SwiperSlide className={styles.swiperSlider}>
-                  <SliderCardDesktop />
-                </SwiperSlide>
+                {movies?.data?.map((post) => (
+                  <SwiperSlide className={styles.swiperSlider}>
+                    <SliderCardDesktop
+                      id={post.id}
+                      img={"http://localhost:1337" + post.attributes.mainImg.data.attributes.url}
+                      tag={post.attributes.tag}  
+                      title={post.attributes.title}
+                      text={post.attributes.description}
+                      author={post.attributes.author}
+                    />
+                  </SwiperSlide>
+                ))}
               </Swiper>
             )
         } else {
@@ -86,24 +95,18 @@ export function MovieSlider({ screenWidth }) {
                 }}
                   className={styles.swiper}
                 >
-                  <SwiperSlide className={styles.swiperSlider}>
-                    <SliderCardDesktop />
-                  </SwiperSlide>
-                  <SwiperSlide className={styles.swiperSlider}>
-                    <SliderCardDesktop />
-                  </SwiperSlide>
-                  <SwiperSlide className={styles.swiperSlider}>
-                    <SliderCardDesktop />
-                  </SwiperSlide>
-                  <SwiperSlide className={styles.swiperSlider}>
-                    <SliderCardDesktop />
-                  </SwiperSlide>
-                  <SwiperSlide className={styles.swiperSlider}>
-                    <SliderCardDesktop />
-                  </SwiperSlide>
-                  <SwiperSlide className={styles.swiperSlider}>
-                    <SliderCardDesktop />
-                  </SwiperSlide>
+                  {movies?.data?.map((post) => (
+                    <SwiperSlide className={styles.swiperSlider}>
+                      <SliderCardDesktop
+                        id={post.id}
+                        img={"http://localhost:1337" + post.attributes.mainImg.data.attributes.url}
+                        tag={post.attributes.tag}  
+                        title={post.attributes.title}
+                        text={post.attributes.description}
+                        author={post.attributes.author}
+                      />
+                    </SwiperSlide>
+                  ))}
                 </Swiper>
               )
         }

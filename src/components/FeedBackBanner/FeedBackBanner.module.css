@@ -87,6 +87,14 @@
 }
 
 @media(min-width: 1024px) {
+    .container {
+        width: var(--container-size-small-desktop);
+    }
+
+    .container img {
+        border-radius: 8px;
+    }
+    
     .info h3 {
         font-size: 1.8rem;
     }
@@ -122,6 +130,10 @@
 }
 
 @media(min-width: 1920px) {
+    .container {
+        width: var(--container-size-larg-desktop);
+    }
+
     .info p {
         width: 35vw;
     }
