@@ -8,9 +8,10 @@ import { SliderCardDesktop } from '../../../components/SliderCardDesktop';
 
 export function GamesSlider({ screenWidth }) {
   const [games, setGames] = useState([]);
+  const api_url = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-      fetch("http://localhost:1337/api/jogos?populate=*")
+      fetch(`${api_url}/jogos?populate=*`)
         .then((res) => res.json())
         .then((games) => setGames(games));
     }, []);

@@ -12,13 +12,14 @@ import bgImg from "../../assets/pexels-lucadross-5976404.jpg"
 export function Music() {
     const location = useLocation();
     const [data, setData] = useState([]);
+    const api_url = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
 
     useEffect(() => {
-        const url = "http://localhost:1337/api/musicas?populate=*";
+        const url = `${api_url}/musicas?populate=*`;
         fetch(url)
         .then((res) => res.json())
         .then((post) => {

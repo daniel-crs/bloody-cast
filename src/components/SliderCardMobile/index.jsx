@@ -20,7 +20,7 @@ export function SliderCardMobile({ id, img, tag, title, author }) {
                     <img src={img} alt="Img" />
 
                     <div className={styles.tag}>
-                        <p>{tag}s</p>
+                        <p>{tag}</p>
                     </div>
                 </div>
             </Link>

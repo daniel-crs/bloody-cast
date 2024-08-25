@@ -2,6 +2,7 @@ import styles from "./StandardPodcastPost.module.css"
 import standarStyle from "../../Style/StandardContainerStyles.module.css"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 import { Header } from "../../components/Header"
 import { BgImgPostPage } from "../../components/BgImgPostPage"
@@ -13,16 +14,17 @@ import { Footer } from "../../components/Footer"
 export function StandardPodcastPost() {
     const { id } = useParams();
     const [data, setData] = useState();
-    const [participantsData, setParticipantsData] = useState([])
+    const [participantsData, setParticipantsData] = useState([]);
+    const api_url = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
-        const url = "http://localhost:1337/api/podcasts/" + id + "?populate=*";
+        const url = `${api_url}/podcasts/${id}?populate=*`;
 
         fetch(url)
         .then((res) => res.json())
         .then((post) => {
             post.data.attributes.participants.data.map((content) => {
-                fetch(`http://localhost:1337/api/participants/${content.id}?populate=*`)
+                fetch(`${api_url}/participants/${content.id}?populate=*`)
                 .then((res) => res.json())
                 .then((participantContent) => {
                     setParticipantsData(participantsData => [ ...participantsData, participantContent ]);
@@ -32,7 +34,9 @@ export function StandardPodcastPost() {
             setData(post.data);
         });
 
-    }, [id]);
+    }, []);
+
+    const content = data?.attributes?.richText;
 
     return (
         <div>
@@ -48,10 +52,8 @@ export function StandardPodcastPost() {
                             <PodcastPlayer audio={"http://localhost:1337" + data?.attributes?.audio?.data?.attributes?.url} />
                         </div>
 
-                        <div className={styles.description}>
-                            <p>
-                                {data?.attributes?.description}
-                            </p>
+                        <div className={styles.imgbody}>
+                            {content && <BlocksRenderer content={content} />}
                         </div>
 
                         <div>

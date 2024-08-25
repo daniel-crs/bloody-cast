@@ -12,6 +12,19 @@
     margin-bottom: 40px;
 }
 
+.imgbody {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.imgbody img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
 .participantsTitle {
     display: flex;
     flex-direction: column;

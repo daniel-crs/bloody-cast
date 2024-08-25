@@ -12,13 +12,14 @@ import bgImg from "../../assets/pexels-lucadross-5976404.jpg"
 export function Books() {
     const location = useLocation();
     const [data, setData] = useState([]);
+    const api_url = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
 
     useEffect(() => {
-        const url = "http://localhost:1337/api/livros?populate=*";
+        const url = `${api_url}/livros?populate=*`;
         fetch(url)
         .then((res) => res.json())
         .then((post) => {

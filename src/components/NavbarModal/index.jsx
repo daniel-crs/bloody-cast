@@ -4,7 +4,7 @@ import { useState } from "react";
 import { MenuElements } from "../MenuElements";
 import { SearchModal } from "../SearchModal";
 import { CgClose } from "react-icons/cg";
-import { IoIosSearch } from "react-icons/io";
+// import { IoIosSearch } from "react-icons/io";
 
 export function NavbarModal({ menuOptions, showMenu, setShowMenu }) {
     const [openSeachModal, setOpenSeachModal] = useState(false);
@@ -24,10 +24,10 @@ export function NavbarModal({ menuOptions, showMenu, setShowMenu }) {
                             )
                         })}
 
-                        <div className={styles.seachContainer} onClick={() => setOpenSeachModal(true)}>
+                        {/* <div className={styles.seachContainer} onClick={() => setOpenSeachModal(true)}>
                             <p className={styles.seachText}>Pesquisa</p>
                             <IoIosSearch className={styles.seachIcon} />
-                        </div>
+                        </div> */}
                     </nav>
                 </div>
 

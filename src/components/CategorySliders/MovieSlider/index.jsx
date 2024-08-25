@@ -8,9 +8,10 @@ import { SliderCardDesktop } from '../../../components/SliderCardDesktop';
 
 export function MovieSlider({ screenWidth }) {
   const [movies, setMovies] = useState([]);
+  const api_url = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-      fetch("http://localhost:1337/api/filmes?populate=*")
+      fetch(`${api_url}/filmes?populate=*`)
         .then((res) => res.json())
         .then((movies) => setMovies(movies));
     }, []);

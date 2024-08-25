@@ -8,9 +8,10 @@ import { SliderCardDesktop } from '../../../components/SliderCardDesktop';
 
 export function PodCastSlider({ screenWidth }) {
   const [podcastData, setPodcastData] = useState([]);
+  const api_url = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-      fetch("http://localhost:1337/api/podcasts?populate=*")
+      fetch(`${api_url}/podcasts?populate=*`)
         .then((res) => res.json())
         .then((podcastData) => setPodcastData(podcastData));
     }, []);

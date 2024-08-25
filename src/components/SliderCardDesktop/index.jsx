@@ -2,8 +2,6 @@ import styles from "./SliderCardDesktop.module.css"
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 
-import bgimg from "../../assets/Enigma-de-outro-mundo.webp"
-
 export function SliderCardDesktop({ id, img, tag, title, author }) {
     const [postUrl, setPostUrl ] = useState("");
 

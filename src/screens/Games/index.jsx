@@ -12,13 +12,14 @@ import bgImg from "../../assets/pexels-lucadross-5976404.jpg";
 export function Games() {
     const location = useLocation();
     const [data, setData] = useState([]);
+    const api_url = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
 
     useEffect(() => {
-        const url = "http://localhost:1337/api/jogos?populate=*";
+        const url = `${api_url}/jogos?populate=*`;
         fetch(url)
         .then((res) => res.json())
         .then((post) => {
@@ -43,7 +44,7 @@ export function Games() {
                         img={"http://localhost:1337" + post.attributes.mainImg.data.attributes.url}
                         tag={post.attributes.tag}  
                         title={post.attributes.title}
-                        text={post.attributes.description}
+                        text={post.attributes.descrition}
                         author={post.attributes.author}
                     />
                 ))}

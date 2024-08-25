@@ -3,9 +3,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay'
 
-import img1 from "../../assets/invocacao-do-mal-4.jpg"
-import img2 from "../../assets/A-guerra-dos-mundos.webp"
-import img3 from "../../assets/it-how.webp"
+import img1 from "../../assets/pexels-lucadross-5976404.jpg"
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -13,8 +11,8 @@ import { Pagination, Autoplay } from 'swiper/modules';
 export function Slider() {
   const sliderOptions = [
     {imgURL: img1, tag: "Crítica", title: "Invocação do mal 4"},
-    {imgURL: img2, tag: "Podcast", title: "A Guerra dos mundos"},
-    {imgURL: img3, tag: "Livros", title: "It a coisa e sua analogia a musíca classica"}
+    {imgURL: img1, tag: "Podcast", title: "A Guerra dos mundos"},
+    {imgURL: img1, tag: "Livros", title: "It a coisa e sua analogia a musíca classica"}
 ];
 
     return (

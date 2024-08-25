@@ -13,7 +13,7 @@ export function BgImgCategoryPage({ title, bgImg, screenEndPoint }) {
             return (
                 <FaMicrophone className={styles.icon} />
             )
-        } else if(screenEndPoint === "/Cinema") {
+        } else if(screenEndPoint === "/Filmes") {
             return (
                 <RiMovie2Fill className={styles.icon} />
             )

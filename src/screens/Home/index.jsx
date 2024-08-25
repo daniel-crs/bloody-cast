@@ -16,6 +16,7 @@ import { Footer } from '../../components/Footer';
 export function Home() {
   const [extraInfo, setExtraInfo] = useState([]);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const api_url = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,7 +34,7 @@ export function Home() {
   }, [screenWidth]);
 
     useEffect(() => {
-      fetch("http://localhost:1337/api/bloody-cast-infos?populate=*")
+      fetch(`${api_url}/bloody-cast-infos?populate=*`)
         .then((res) => res.json())
         .then((extraInfo) => setExtraInfo(extraInfo));
       }, []);

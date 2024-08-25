@@ -8,9 +8,10 @@ import { SliderCardDesktop } from '../../../components/SliderCardDesktop';
 
 export function MusicSlider({ screenWidth }) {
   const [music, setMusic] = useState([]);
+  const api_url = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-      fetch("http://localhost:1337/api/musicas?populate=*")
+      fetch(`${api_url}/musicas?populate=*`)
         .then((res) => res.json())
         .then((music) => setMusic(music));
     }, []);

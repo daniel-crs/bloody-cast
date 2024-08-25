@@ -8,9 +8,10 @@ import { SliderCardDesktop } from '../../../components/SliderCardDesktop';
 
 export function BookSlider({ screenWidth }) {
   const [books, setBooks] = useState([]);
+  const api_url = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
-      fetch("http://localhost:1337/api/livros?populate=*")
+      fetch(`${api_url}/livros?populate=*`)
         .then((res) => res.json())
         .then((books) => setBooks(books));
     }, []);
@@ -115,7 +116,7 @@ export function BookSlider({ screenWidth }) {
     return (
         <div className={styles.swiperContainer}>
             <div className={styles.title}>
-                <h3>Livros</h3>
+                <h3>Livro</h3>
                 <span className={styles.underBar}></span>
             </div>
 
