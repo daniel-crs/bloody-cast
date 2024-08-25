@@ -2,7 +2,7 @@ import styles from "./StandardPost.module.css"
 import standarStyle from "../../Style/StandardContainerStyles.module.css"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import ReactMarkdown from 'react-markdown'
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 import { Header } from "../../components/Header"
 import { BgImgPostPage } from "../../components/BgImgPostPage"
@@ -25,8 +25,8 @@ export function StandardPost() {
         });
 
     }, [tag, id]);
-
-    console.log(`http://localhost:1337/api/${tag}/${id}?populate=*`)
+    
+    const content = data?.attributes?.richText;
 
     return (
         <div>
@@ -40,7 +40,7 @@ export function StandardPost() {
                 <div className={standarStyle.standardContainerForPost}>
                     <div className={styles.content}>
                         <div>
-                            <ReactMarkdown className={styles.imgbody}>{data?.attributes?.richText}</ReactMarkdown>
+                            <BlocksRenderer content={content} className={styles.imgbody} />
                         </div>
                         
                         <div className={styles.underBody}>

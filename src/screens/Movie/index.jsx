@@ -11,8 +11,11 @@ import bgImg from "../../assets/pexels-lucadross-5976404.jpg"
 
 export function Movie() {
   const location = useLocation();
-
   const [data, setData] = useState([]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
       const url = "http://localhost:1337/api/filmes?populate=*";

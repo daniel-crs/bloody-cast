@@ -4,8 +4,11 @@ import { useState, useEffect } from "react";
 import { Header } from "../../components/Header"
 import { BgImgHome } from '../../components/BgImgHome';
 import { Slider } from '../../components/Slider';
+import { PodCastSlider } from '../../components/CategorySliders/PodCastSlider';
 import { MovieSlider } from '../../components/CategorySliders/MovieSlider';
 import { BookSlider } from '../../components/CategorySliders/BookSlider';
+import { MusicSlider } from '../../components/CategorySliders/MusicSlider';
+import { GamesSlider } from '../../components/CategorySliders/GamesSlider';
 import { FeedBackBanner } from '../../components/FeedBackBanner';
 import { InfoDropdown } from '../../components/InfoDropdown';
 import { Footer } from '../../components/Footer';
@@ -13,6 +16,10 @@ import { Footer } from '../../components/Footer';
 export function Home() {
   const [extraInfo, setExtraInfo] = useState([]);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const addScreenWidth = () => {
       setScreenWidth(window.innerWidth);
@@ -38,9 +45,15 @@ export function Home() {
       <div className={styles.bodyContainer}>
         <BgImgHome />
 
+        <PodCastSlider screenWidth={screenWidth} />
+
         <MovieSlider screenWidth={screenWidth} />
 
-        {/* <BookSlider screenWidth={screenWidth} /> */}
+        <BookSlider screenWidth={screenWidth} />
+
+        <MusicSlider screenWidth={screenWidth} />
+
+        <GamesSlider screenWidth={screenWidth} />
 
        <FeedBackBanner />
 

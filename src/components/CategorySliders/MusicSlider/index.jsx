@@ -6,13 +6,13 @@ import { Pagination } from 'swiper/modules';
 import { SliderCardMobile } from '../../../components/SliderCardMobile';
 import { SliderCardDesktop } from '../../../components/SliderCardDesktop';
 
-export function BookSlider({ screenWidth }) {
-  const [books, setBooks] = useState([]);
+export function MusicSlider({ screenWidth }) {
+  const [music, setMusic] = useState([]);
 
   useEffect(() => {
-      fetch("http://localhost:1337/api/livros?populate=*")
+      fetch("http://localhost:1337/api/musicas?populate=*")
         .then((res) => res.json())
-        .then((books) => setBooks(books));
+        .then((music) => setMusic(music));
     }, []);
 
   const ScreenRender = () => {
@@ -33,7 +33,7 @@ export function BookSlider({ screenWidth }) {
             }}
             className={styles.swiper}
           >
-            {books?.data?.filter(post => post.attributes.destaque === true).map((post) => (
+            {music?.data?.filter(post => post.attributes.destaque === true).map((post) => (
               <SwiperSlide key={post.id} className={styles.swiperSlider}>
                 <SliderCardMobile
                   id={post.id}
@@ -64,7 +64,7 @@ export function BookSlider({ screenWidth }) {
             }}
             className={styles.swiper}
           >
-            {books?.data?.map((post) => (
+            {music?.data?.map((post) => (
               <SwiperSlide className={styles.swiperSlider}>
                 <SliderCardDesktop
                   id={post.id}
@@ -95,7 +95,7 @@ export function BookSlider({ screenWidth }) {
             }}
               className={styles.swiper}
             >
-              {books?.data?.map((post) => (
+              {music?.data?.map((post) => (
                 <SwiperSlide className={styles.swiperSlider}>
                   <SliderCardDesktop
                     id={post.id}
@@ -115,7 +115,7 @@ export function BookSlider({ screenWidth }) {
     return (
         <div className={styles.swiperContainer}>
             <div className={styles.title}>
-                <h3>Livros</h3>
+                <h3>Musicas</h3>
                 <span className={styles.underBar}></span>
             </div>
 

@@ -6,13 +6,13 @@ import { Pagination } from 'swiper/modules';
 import { SliderCardMobile } from '../../../components/SliderCardMobile';
 import { SliderCardDesktop } from '../../../components/SliderCardDesktop';
 
-export function BookSlider({ screenWidth }) {
-  const [books, setBooks] = useState([]);
+export function PodCastSlider({ screenWidth }) {
+  const [podcastData, setPodcastData] = useState([]);
 
   useEffect(() => {
-      fetch("http://localhost:1337/api/livros?populate=*")
+      fetch("http://localhost:1337/api/podcasts?populate=*")
         .then((res) => res.json())
-        .then((books) => setBooks(books));
+        .then((podcastData) => setPodcastData(podcastData));
     }, []);
 
   const ScreenRender = () => {
@@ -33,11 +33,11 @@ export function BookSlider({ screenWidth }) {
             }}
             className={styles.swiper}
           >
-            {books?.data?.filter(post => post.attributes.destaque === true).map((post) => (
+            {podcastData?.data?.filter(post => post.attributes.destaque === true).map((post) => (
               <SwiperSlide key={post.id} className={styles.swiperSlider}>
                 <SliderCardMobile
                   id={post.id}
-                  img={"http://localhost:1337" + post.attributes.mainImg.data.attributes.url}
+                  img={"http://localhost:1337" + post.attributes.img.data.attributes.url}
                   tag={post.attributes.tag}  
                   title={post.attributes.title}
                   text={post.attributes.description}
@@ -64,11 +64,11 @@ export function BookSlider({ screenWidth }) {
             }}
             className={styles.swiper}
           >
-            {books?.data?.map((post) => (
+            {podcastData?.data?.map((post) => (
               <SwiperSlide className={styles.swiperSlider}>
                 <SliderCardDesktop
                   id={post.id}
-                  img={"http://localhost:1337" + post.attributes.mainImg.data.attributes.url}
+                  img={"http://localhost:1337" + post.attributes.img.data.attributes.url}
                   tag={post.attributes.tag}  
                   title={post.attributes.title}
                   text={post.attributes.description}
@@ -95,11 +95,11 @@ export function BookSlider({ screenWidth }) {
             }}
               className={styles.swiper}
             >
-              {books?.data?.map((post) => (
+              {podcastData?.data?.map((post) => (
                 <SwiperSlide className={styles.swiperSlider}>
                   <SliderCardDesktop
                     id={post.id}
-                    img={"http://localhost:1337" + post.attributes.mainImg.data.attributes.url}
+                    img={"http://localhost:1337" + post.attributes.img.data.attributes.url}
                     tag={post.attributes.tag}  
                     title={post.attributes.title}
                     text={post.attributes.description}
@@ -115,7 +115,7 @@ export function BookSlider({ screenWidth }) {
     return (
         <div className={styles.swiperContainer}>
             <div className={styles.title}>
-                <h3>Livros</h3>
+                <h3>PodCast</h3>
                 <span className={styles.underBar}></span>
             </div>
 

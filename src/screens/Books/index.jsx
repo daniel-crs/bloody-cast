@@ -11,17 +11,20 @@ import bgImg from "../../assets/pexels-lucadross-5976404.jpg"
 
 export function Books() {
     const location = useLocation();
-  
     const [data, setData] = useState([]);
 
-  useEffect(() => {
-      const url = "http://localhost:1337/api/livros?populate=*";
-      fetch(url)
-      .then((res) => res.json())
-      .then((post) => {
-          setData(post.data);
-      });
-  }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
+    useEffect(() => {
+        const url = "http://localhost:1337/api/livros?populate=*";
+        fetch(url)
+        .then((res) => res.json())
+        .then((post) => {
+            setData(post.data);
+        });
+    }, []);
 
     return (
         <div>
