@@ -2,8 +2,7 @@ import styles from "./Score.module.css"
 
 import { FaStar } from "react-icons/fa";
 
-export function Score() {
-    const score = 5;
+export function Score({ score }) {
 
     const RenderScore = () => {
         if(score == 5) {
@@ -51,7 +50,7 @@ export function Score() {
 
     return (
         <div className={styles.scoreTitle}>
-            <h3>Mais Recentes</h3>
+            <h3>Notas</h3>
             <span className={styles.underBar}></span>
 
             <div className={styles.scoreContainer}>

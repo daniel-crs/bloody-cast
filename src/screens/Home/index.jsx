@@ -1,42 +1,76 @@
 import styles from './Home.module.css';
+import { useState, useEffect } from "react";
 
 import { Header } from "../../components/Header"
+import { BgImgHome } from '../../components/BgImgHome';
 import { Slider } from '../../components/Slider';
+import { PodCastSlider } from '../../components/CategorySliders/PodCastSlider';
+import { MovieSlider } from '../../components/CategorySliders/MovieSlider';
+import { BookSlider } from '../../components/CategorySliders/BookSlider';
+import { MusicSlider } from '../../components/CategorySliders/MusicSlider';
+import { GamesSlider } from '../../components/CategorySliders/GamesSlider';
 import { FeedBackBanner } from '../../components/FeedBackBanner';
 import { InfoDropdown } from '../../components/InfoDropdown';
 import { Footer } from '../../components/Footer';
 
 export function Home() {
-  const infoOptions = [
-    {title: "Por que criamos o bloodcast", description: "BloodCast é um blog/podcast criado pela nossa equipe  pelo amor que possuímos pelo gênero de terror e pelo  desejo de compartilhar nossos conhecimentos sobre o mesmo com as pessoas."}, 
-    {title: "Quem são os criadores.", description: "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI,"},
-    {title: "Data e horároio de lançamento de novos episódios do nosso podcast.", description: "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI,"}
-  ];
+  const [extraInfo, setExtraInfo] = useState([]);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const api_url = process.env.REACT_APP_API_URL;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const addScreenWidth = () => {
+      setScreenWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+      window.addEventListener('resize', addScreenWidth);
+          return() => {
+              window.removeEventListener('resize', addScreenWidth)
+          }
+  }, [screenWidth]);
+
+    useEffect(() => {
+      fetch(`${api_url}/bloody-cast-infos?populate=*`)
+        .then((res) => res.json())
+        .then((extraInfo) => setExtraInfo(extraInfo));
+      }, []);
+    
   return (
     <div>
       <Header />
 
-      <body className={styles.bodyContainer}>
-        <Slider />
+      <div className={styles.bodyContainer}>
+        <BgImgHome />
 
-        <FeedBackBanner />
+        <PodCastSlider screenWidth={screenWidth} />
+
+        <MovieSlider screenWidth={screenWidth} />
+
+        <BookSlider screenWidth={screenWidth} />
+
+        <MusicSlider screenWidth={screenWidth} />
+
+        <GamesSlider screenWidth={screenWidth} />
+
+       <FeedBackBanner />
 
         <div className={styles.cardContainer}>
             <h3>
                 Informações extras
             </h3> 
             <div className={styles.dropdownPosition}>
-              {infoOptions.map(function(data) {
-                return (
-                  <InfoDropdown title={data.title} description={data.description} />
-                )
-              })}
+              {extraInfo?.data?.map((post) => (
+                <InfoDropdown key={post.id} title={post.attributes.title} description={post.attributes.description} />
+              ))}
             </div>
         </div>
-      </body>
+      </div>
       
-      <Footer />
+     <Footer />
     </div>
   );
 }

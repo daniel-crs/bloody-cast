@@ -1,5 +1,6 @@
 import styles from "../../Style/StandardContainerStyles.module.css"
 import { useLocation } from "react-router-dom"
+import { useState, useEffect } from "react"
 
 import { Header } from "../../components/Header"
 import { BgImgCategoryPage } from '../../components/BgImgCategoryPage';
@@ -7,10 +8,24 @@ import { Filter } from "../../components/Filter"
 import { CardRender } from "../../components/CardRender";
 import { Footer } from "../../components/Footer"
 import bgImg from "../../assets/pexels-lucadross-5976404.jpg"
-import cardImg from "../../assets/Mad-God.png"
 
 export function PodCast() {
     const location = useLocation();
+    const [data, setData] = useState([]);
+    const api_url = process.env.REACT_APP_API_URL;
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
+    useEffect(() => {
+        const url = `${api_url}/podcasts?populate=*`;
+        fetch(url)
+        .then((res) => res.json())
+        .then((post) => {
+            setData(post.data);
+        });
+    }, []);
 
     return (
         <div>
@@ -22,14 +37,18 @@ export function PodCast() {
                 <div className={styles.standardContainer}>
                     <Filter />
 
-                    <CardRender
-                        id={1}
-                        img={cardImg}
-                        tag={"PodCast"}  
-                        title={"O vale da estranheza presente em mad god."}
-                        text={"É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de."}
-                        author={"Gabriel Zanon"}
-                    />
+                    {data?.map((post) => (     
+                        <CardRender
+                            key={post.id}
+                            id={post.id}
+                            img={"http://localhost:1337" + post.attributes.img.data.attributes.url}
+                            tag={post.attributes.tag}  
+                            title={post.attributes.title}
+                            text={post.attributes.description}
+                            author={post.attributes.author}
+                        />
+                    ))}
+
                 </div>
             </body>
             

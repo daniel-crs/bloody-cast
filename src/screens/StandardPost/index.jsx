@@ -1,75 +1,52 @@
 import styles from "./StandardPost.module.css"
 import standarStyle from "../../Style/StandardContainerStyles.module.css"
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 import { Header } from "../../components/Header"
 import { BgImgPostPage } from "../../components/BgImgPostPage"
 import { TitleForPost } from "../../components/TitleForPost"
-import img from "../../assets/Enigma-de-outro-mundo-2.jpg"
-import img2 from "../../assets/andras.webp"
 import { Score } from "../../components/Score";
 import { Footer } from "../../components/Footer"
 
 export function StandardPost() {
+    const { tag, id } = useParams();
+    const [data, setData] = useState();
+    const api_url = process.env.REACT_APP_API_URL;
+
+    useEffect(() => {
+        const url = `${api_url}/${tag}/${id}?populate=*`;
+        
+        fetch(url)
+        .then((res) => res.json())
+        .then((post) => {
+            setData(post.data);
+        });
+
+    }, []);
+    
+    const content = data?.attributes?.richText;
 
     return (
         <div>
             <Header />
 
             <div>
-                <BgImgPostPage />
+                <BgImgPostPage tag={data?.attributes?.tag} img={"http://localhost:1337" + data?.attributes?.mainImg?.data?.attributes?.url} />
 
-                <TitleForPost />
+                <TitleForPost title={data?.attributes?.title} author={data?.attributes?.author} data={data?.attributes?.date} />
 
                 <div className={standarStyle.standardContainerForPost}>
                     <div className={styles.content}>
-                        <div className={styles.description}>
-                            <p>
-                                É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver 
-                                examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário 
-                                de "Conteúdo aqui, conteúdo aqui", fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares 
-                                de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão,
-                            </p>
-                        </div>
-
                         <div className={styles.imgbody}>
-                            <img src={img} alt="" />
-                        </div>
-
-                        <div className={styles.description}>
-                            <p>
-                                É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver 
-                                examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário 
-                                de "Conteúdo aqui, conteúdo aqui", fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares 
-                                de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão,
-                            </p>
-                        </div>
-
-                        <div className={styles.description}>
-                            <p>
-                                É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver 
-                                examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário 
-                                de "Conteúdo aqui, conteúdo aqui", fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares 
-                                de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão,
-                            </p>
-                        </div>
-
-                        <div className={styles.imgbody}>
-                            <img src={img} alt="" />
-                        </div>
-
-                        <div className={styles.description}>
-                            <p>
-                                É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver 
-                                examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário 
-                                de "Conteúdo aqui, conteúdo aqui", fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares 
-                                de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão,
-                            </p>
+                            {content && <BlocksRenderer content={content} />}
                         </div>
                         
                         <div className={styles.underBody}>
-                            <Score />
+                            <Score score={data?.attributes?.score} />
 
-                            <div className={styles.authorContainer}>
+                            {/* <div className={styles.authorContainer}>
                                 <div className={styles.authorImg}>
                                     <img src={img2} alt="" />
                                 </div>
@@ -77,12 +54,12 @@ export function StandardPost() {
                                 <div className={styles.authorInfo}>
                                     <div className={styles.author}>
                                         <p className={styles.firstPart}>por</p>
-                                        <p className={styles.secondPart}>Gabriel Zanon</p>
+                                        <p className={styles.secondPart}>{data?.attributes?.author}</p>
                                     </div>
                                     
-                                    <time className={styles.time} title="11 de Maio as 08:13" dateTime="2022-05-11 08:13:30">Publicado em 12/04/2023</time>
+                                    <time className={styles.time} title="11 de Maio as 08:13" dateTime="2022-05-11 08:13:30">Publicado em {data?.attributes?.date}</time>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

@@ -1,14 +1,12 @@
 import styles from "./BgImgPostPage.module.css"
 
-import cardImg2 from "../../assets/Enigma-de-outro-mundo.webp"
-
-export function BgImgPostPage() {
+export function BgImgPostPage({ tag, img }) {
     return (
         <div className={styles.imgHeader}>
-            <img src={cardImg2} alt="" />
+            <img src={img} alt="" />
 
             <div className={styles.tagContainer}>
-                <p>Cinema</p>
+                <p>{tag}</p>
             </div>
         </div>
     )

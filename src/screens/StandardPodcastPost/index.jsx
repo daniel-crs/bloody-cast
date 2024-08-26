@@ -1,5 +1,8 @@
 import styles from "./StandardPodcastPost.module.css"
 import standarStyle from "../../Style/StandardContainerStyles.module.css"
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 import { Header } from "../../components/Header"
 import { BgImgPostPage } from "../../components/BgImgPostPage"
@@ -8,45 +11,49 @@ import { PodcastPlayer } from "../../components/PodcastPlayer"
 import { Participants } from "../../components/Participants"
 import { Footer } from "../../components/Footer"
 
-import img2 from "../../assets/andras.webp"
-
 export function StandardPodcastPost() {
-    const participante = [
-        {
-          img: img2,
-          name: "Gabriel Zanon"
-        },
-        {
-          img: img2,
-          name: "Gabriel Zanon"
-        },
-        {
-          img: img2,
-          name: "Gabriel Zanon"
-        }
-      ]
+    const { id } = useParams();
+    const [data, setData] = useState();
+    const [participantsData, setParticipantsData] = useState([]);
+    const api_url = process.env.REACT_APP_API_URL;
+
+    useEffect(() => {
+        const url = `${api_url}/podcasts/${id}?populate=*`;
+
+        fetch(url)
+        .then((res) => res.json())
+        .then((post) => {
+            post.data.attributes.participants.data.map((content) => {
+                fetch(`${api_url}/participants/${content.id}?populate=*`)
+                .then((res) => res.json())
+                .then((participantContent) => {
+                    setParticipantsData(participantsData => [ ...participantsData, participantContent ]);
+                })
+            })
+
+            setData(post.data);
+        });
+
+    }, []);
+
+    const content = data?.attributes?.richText;
 
     return (
         <div>
             <Header />
             <div>
-                <BgImgPostPage />
+                <BgImgPostPage tag={data?.attributes?.tag} img={"http://localhost:1337" + data?.attributes?.img?.data?.attributes?.url} />
 
-                <TitleForPost />
+                <TitleForPost title={data?.attributes?.title} author={data?.attributes?.author} data={data?.attributes?.date} />
 
                 <div className={standarStyle.standardContainerForPost}>
                     <div className={styles.content}>
                         <div className={styles.elements}>
-                            <PodcastPlayer />
+                            <PodcastPlayer audio={"http://localhost:1337" + data?.attributes?.audio?.data?.attributes?.url} />
                         </div>
 
-                        <div className={styles.description}>
-                            <p>
-                                É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver 
-                                examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário 
-                                de "Conteúdo aqui, conteúdo aqui", fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares 
-                                de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão,
-                            </p>
+                        <div className={styles.imgbody}>
+                            {content && <BlocksRenderer content={content} />}
                         </div>
 
                         <div>
@@ -56,11 +63,9 @@ export function StandardPodcastPost() {
                             </div>
 
                             <div className={styles.participantsContainer}>
-                                {participante.map(function(data) {
-                                    return (
-                                        <Participants img={data.img} name={data.name} />
-                                    )
-                                })}
+                            {participantsData.map((participant) => (
+                                <Participants key={participant?.data?.id} profile={"http://localhost:1337" + participant?.data?.attributes?.profile?.data?.attributes?.url} name={participant?.data?.attributes?.name} />  
+                            ))}  
                             </div>
                         </div>
                     </div>

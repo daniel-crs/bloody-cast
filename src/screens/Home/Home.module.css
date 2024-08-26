@@ -36,6 +36,11 @@
 }
 
 @media(min-width: 1024px) {
+    .swiper {
+        display: flex;
+        flex-direction: row;
+    }
+    
     .cardContainer {
         width: var(--container-size-small-desktop);
     }

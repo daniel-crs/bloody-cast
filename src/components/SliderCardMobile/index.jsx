@@ -1,9 +1,8 @@
-import styles from "./CardMobile.module.css"
+import styles from "./SliderCardMobile.module.css";
 import { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom"
 
-export function CardMobile({ id, img, tag, title, author }) {
+export function SliderCardMobile({ id, img, tag, title, author }) {
     const [postUrl, setPostUrl ] = useState("");
 
     useEffect(() => {

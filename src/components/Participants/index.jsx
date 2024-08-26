@@ -1,10 +1,10 @@
 import styles from "./Participants.module.css"
 
-export function Participants({ img, name }) {
+export function Participants({ profile, name }) {
     return (
         <div className={styles.authorContainer}>
             <div className={styles.authorImg}>
-                <img src={img} alt="" />
+                <img src={profile} alt="" />
             </div>
 
             <div className={styles.authorInfo}>

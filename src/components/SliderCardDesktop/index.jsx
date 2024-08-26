@@ -1,9 +1,8 @@
-import styles from "./CardMobile.module.css"
+import styles from "./SliderCardDesktop.module.css"
 import { useState, useEffect } from "react";
-
 import { Link } from "react-router-dom"
 
-export function CardMobile({ id, img, tag, title, author }) {
+export function SliderCardDesktop({ id, img, tag, title, author }) {
     const [postUrl, setPostUrl ] = useState("");
 
     useEffect(() => {
@@ -42,8 +41,6 @@ export function CardMobile({ id, img, tag, title, author }) {
                     </div>
                 </div>
             </Link>
-
-            <span className={styles.underBar}></span>
         </div>
     )
 }

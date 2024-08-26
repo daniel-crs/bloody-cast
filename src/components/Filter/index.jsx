@@ -1,11 +1,11 @@
 import styles from './Filter.module.css';
-import { useState } from 'react';
+// import { useState } from 'react';
 
-import { FilterModal } from "../../components/FilterModal";
+// import { FilterModal } from "../../components/FilterModal";
 import { IoFilter } from "react-icons/io5";
 
 export function Filter() {
-    const [showFilter, setShowFilter] = useState(false);
+    // const [showFilter, setShowFilter] = useState(false);
 
     return (
         <>
@@ -15,16 +15,16 @@ export function Filter() {
                     <span className={styles.underBar}></span>
                 </div>
 
-                <button className={styles.filter} onClick={() => setShowFilter(true)}>
+                <button className={styles.filter}>
                     <p>Filtro</p>
                     <IoFilter className={styles.icon} />
                 </button>
             </div>
 
-            <FilterModal 
+            {/* <FilterModal 
                 showFilter={showFilter} 
                 setShowFilter={() => setShowFilter(!showFilter)} 
-            />
+            /> */}
         </>
     )
 }

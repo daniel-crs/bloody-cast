@@ -10,12 +10,12 @@ import {
     MediaMuteButton
   } from 'media-chrome/react';
 
-export function PodcastPlayer() {
+export function PodcastPlayer({ audio }) {
     return (
         <MediaController className={styles.bg} audio>
             <audio
                 slot="media"
-                src="https://stream.mux.com/O4h5z00885HEucNNa1rV02wZapcGp01FXXoJd35AHmGX7g/audio.m4a"
+                src={audio}
             ></audio>
             <MediaControlBar className={styles.container}>
                 <MediaTimeDisplay showDuration className={styles.timer}></MediaTimeDisplay>
