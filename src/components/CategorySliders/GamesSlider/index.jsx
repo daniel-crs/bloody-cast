@@ -65,7 +65,7 @@ export function GamesSlider({ screenWidth }) {
             }}
             className={styles.swiper}
           >
-            {games?.data?.map((post) => (
+            {games?.data?.filter(post => post.attributes.destaque === true).map((post) => (
               <SwiperSlide className={styles.swiperSlider}>
                 <SliderCardDesktop
                   id={post.id}
@@ -96,7 +96,7 @@ export function GamesSlider({ screenWidth }) {
             }}
               className={styles.swiper}
             >
-              {games?.data?.map((post) => (
+              {games?.data?.filter(post => post.attributes.destaque === true).map((post) => (
                 <SwiperSlide className={styles.swiperSlider}>
                   <SliderCardDesktop
                     id={post.id}

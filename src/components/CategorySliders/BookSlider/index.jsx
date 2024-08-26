@@ -65,7 +65,7 @@ export function BookSlider({ screenWidth }) {
             }}
             className={styles.swiper}
           >
-            {books?.data?.map((post) => (
+            {books?.data?.filter(post => post.attributes.destaque === true).map((post) => (
               <SwiperSlide className={styles.swiperSlider}>
                 <SliderCardDesktop
                   id={post.id}
@@ -96,7 +96,7 @@ export function BookSlider({ screenWidth }) {
             }}
               className={styles.swiper}
             >
-              {books?.data?.map((post) => (
+              {books?.data?.filter(post => post.attributes.destaque === true).map((post) => (
                 <SwiperSlide className={styles.swiperSlider}>
                   <SliderCardDesktop
                     id={post.id}

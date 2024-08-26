@@ -65,7 +65,7 @@ export function MovieSlider({ screenWidth }) {
                 }}
                 className={styles.swiper}
               >
-                {movies?.data?.map((post) => (
+                {movies?.data?.filter(post => post.attributes.destaque === true).map((post) => (
                   <SwiperSlide className={styles.swiperSlider}>
                     <SliderCardDesktop
                       id={post.id}
@@ -96,7 +96,7 @@ export function MovieSlider({ screenWidth }) {
                 }}
                   className={styles.swiper}
                 >
-                  {movies?.data?.map((post) => (
+                  {movies?.data?.filter(post => post.attributes.destaque === true).map((post) => (
                     <SwiperSlide className={styles.swiperSlider}>
                       <SliderCardDesktop
                         id={post.id}

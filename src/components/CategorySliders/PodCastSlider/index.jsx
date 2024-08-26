@@ -65,7 +65,7 @@ export function PodCastSlider({ screenWidth }) {
             }}
             className={styles.swiper}
           >
-            {podcastData?.data?.map((post) => (
+            {podcastData?.data?.filter(post => post.attributes.destaque === true).map((post) => (
               <SwiperSlide className={styles.swiperSlider}>
                 <SliderCardDesktop
                   id={post.id}
@@ -96,7 +96,7 @@ export function PodCastSlider({ screenWidth }) {
             }}
               className={styles.swiper}
             >
-              {podcastData?.data?.map((post) => (
+              {podcastData?.data?.filter(post => post.attributes.destaque === true).map((post) => (
                 <SwiperSlide className={styles.swiperSlider}>
                   <SliderCardDesktop
                     id={post.id}

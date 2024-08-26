@@ -65,7 +65,7 @@ export function MusicSlider({ screenWidth }) {
             }}
             className={styles.swiper}
           >
-            {music?.data?.map((post) => (
+            {music?.data?.filter(post => post.attributes.destaque === true).map((post) => (
               <SwiperSlide className={styles.swiperSlider}>
                 <SliderCardDesktop
                   id={post.id}
@@ -96,7 +96,7 @@ export function MusicSlider({ screenWidth }) {
             }}
               className={styles.swiper}
             >
-              {music?.data?.map((post) => (
+              {music?.data?.filter(post => post.attributes.destaque === true).map((post) => (
                 <SwiperSlide className={styles.swiperSlider}>
                   <SliderCardDesktop
                     id={post.id}
