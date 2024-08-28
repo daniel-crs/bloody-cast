@@ -9,6 +9,7 @@ import { SliderCardDesktop } from '../../../components/SliderCardDesktop';
 export function MusicSlider({ screenWidth }) {
   const [music, setMusic] = useState([]);
   const api_url = process.env.REACT_APP_API_URL;
+  const img_url = process.env.REACT_APP_API_IMG_URL;
 
   useEffect(() => {
       fetch(`${api_url}/musicas?populate=*`)
@@ -38,7 +39,7 @@ export function MusicSlider({ screenWidth }) {
               <SwiperSlide key={post.id} className={styles.swiperSlider}>
                 <SliderCardMobile
                   id={post.id}
-                  img={"http://localhost:1337" + post.attributes.mainImg.data.attributes.url}
+                  img={img_url + post.attributes.mainImg.data.attributes.url}
                   tag={post.attributes.tag}  
                   title={post.attributes.title}
                   text={post.attributes.description}
@@ -69,7 +70,7 @@ export function MusicSlider({ screenWidth }) {
               <SwiperSlide className={styles.swiperSlider}>
                 <SliderCardDesktop
                   id={post.id}
-                  img={"http://localhost:1337" + post.attributes.mainImg.data.attributes.url}
+                  img={img_url + post.attributes.mainImg.data.attributes.url}
                   tag={post.attributes.tag}  
                   title={post.attributes.title}
                   text={post.attributes.description}
@@ -100,7 +101,7 @@ export function MusicSlider({ screenWidth }) {
                 <SwiperSlide className={styles.swiperSlider}>
                   <SliderCardDesktop
                     id={post.id}
-                    img={"http://localhost:1337" + post.attributes.mainImg.data.attributes.url}
+                    img={img_url + post.attributes.mainImg.data.attributes.url}
                     tag={post.attributes.tag}  
                     title={post.attributes.title}
                     text={post.attributes.description}

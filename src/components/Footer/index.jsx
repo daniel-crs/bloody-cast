@@ -7,10 +7,11 @@ import instagram from "../../assets/instagram.png"
 import BloodyCastLogo from "../../assets/logo.png"
 
 export function Footer() {
+    const api_url = process.env.REACT_APP_API_URL;
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        const url = "http://localhost:1337/api/contacts";
+        const url = `${api_url}/contacts`;
         fetch(url)
         .then((res) => res.json())
         .then((contact) => {

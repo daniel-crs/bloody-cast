@@ -14,6 +14,7 @@ export function StandardPost() {
     const { tag, id } = useParams();
     const [data, setData] = useState();
     const api_url = process.env.REACT_APP_API_URL;
+    const img_url = process.env.REACT_APP_API_IMG_URL;
 
     useEffect(() => {
         const url = `${api_url}/${tag}/${id}?populate=*`;
@@ -33,7 +34,7 @@ export function StandardPost() {
             <Header />
 
             <div>
-                <BgImgPostPage tag={data?.attributes?.tag} img={"http://localhost:1337" + data?.attributes?.mainImg?.data?.attributes?.url} />
+                <BgImgPostPage tag={data?.attributes?.tag} img={img_url + data?.attributes?.mainImg?.data?.attributes?.url} />
 
                 <TitleForPost title={data?.attributes?.title} author={data?.attributes?.author} data={data?.attributes?.date} />
 

@@ -9,6 +9,7 @@ import { SliderCardDesktop } from '../../../components/SliderCardDesktop';
 export function PodCastSlider({ screenWidth }) {
   const [podcastData, setPodcastData] = useState([]);
   const api_url = process.env.REACT_APP_API_URL;
+  const img_url = process.env.REACT_APP_API_IMG_URL;
 
   useEffect(() => {
       fetch(`${api_url}/podcasts?populate=*`)
@@ -38,7 +39,7 @@ export function PodCastSlider({ screenWidth }) {
               <SwiperSlide key={post.id} className={styles.swiperSlider}>
                 <SliderCardMobile
                   id={post.id}
-                  img={"http://localhost:1337" + post.attributes.img.data.attributes.url}
+                  img={img_url + post.attributes.img.data.attributes.url}
                   tag={post.attributes.tag}  
                   title={post.attributes.title}
                   text={post.attributes.description}
@@ -69,7 +70,7 @@ export function PodCastSlider({ screenWidth }) {
               <SwiperSlide className={styles.swiperSlider}>
                 <SliderCardDesktop
                   id={post.id}
-                  img={"http://localhost:1337" + post.attributes.img.data.attributes.url}
+                  img={img_url + post.attributes.img.data.attributes.url}
                   tag={post.attributes.tag}  
                   title={post.attributes.title}
                   text={post.attributes.description}
@@ -100,7 +101,7 @@ export function PodCastSlider({ screenWidth }) {
                 <SwiperSlide className={styles.swiperSlider}>
                   <SliderCardDesktop
                     id={post.id}
-                    img={"http://localhost:1337" + post.attributes.img.data.attributes.url}
+                    img={img_url + post.attributes.img.data.attributes.url}
                     tag={post.attributes.tag}  
                     title={post.attributes.title}
                     text={post.attributes.description}

@@ -1,11 +1,13 @@
 import styles from "./BgImgHome.module.css"
 import { useState, useEffect } from "react";
 
-export function BgImgHome({ img }) {
+export function BgImgHome() {
+    const api_url = process.env.REACT_APP_API_URL;
+    const img_url = process.env.REACT_APP_API_IMG_URL;
     const [banner, setBanner] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:1337/api/wellcome-banners?populate=*")
+        fetch(`${api_url}/wellcome-banners?populate=*`)
             .then((res) => res.json())
             .then((banner) => setBanner(banner));
     }, []);
@@ -14,7 +16,7 @@ export function BgImgHome({ img }) {
         <>
             {banner?.data?.map((post) => (
                 <div key={post.id} className={styles.imgHeader}>
-                    <img src={"http://localhost:1337" + post.attributes.img.data.attributes.url} alt="background-img" />
+                    <img src={img_url + post.attributes.img.data.attributes.url} alt="background-img" />
 
                     <div className={styles.info}>
                         <h3>{post.attributes.Title}</h3>

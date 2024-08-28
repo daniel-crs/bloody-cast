@@ -16,6 +16,7 @@ export function StandardPodcastPost() {
     const [data, setData] = useState();
     const [participantsData, setParticipantsData] = useState([]);
     const api_url = process.env.REACT_APP_API_URL;
+    const img_url = process.env.REACT_APP_API_IMG_URL;
 
     useEffect(() => {
         const url = `${api_url}/podcasts/${id}?populate=*`;
@@ -42,14 +43,14 @@ export function StandardPodcastPost() {
         <div>
             <Header />
             <div>
-                <BgImgPostPage tag={data?.attributes?.tag} img={"http://localhost:1337" + data?.attributes?.img?.data?.attributes?.url} />
+                <BgImgPostPage tag={data?.attributes?.tag} img={img_url + data?.attributes?.img?.data?.attributes?.url} />
 
                 <TitleForPost title={data?.attributes?.title} author={data?.attributes?.author} data={data?.attributes?.date} />
 
                 <div className={standarStyle.standardContainerForPost}>
                     <div className={styles.content}>
                         <div className={styles.elements}>
-                            <PodcastPlayer audio={"http://localhost:1337" + data?.attributes?.audio?.data?.attributes?.url} />
+                            <PodcastPlayer audio={img_url + data?.attributes?.audio?.data?.attributes?.url} />
                         </div>
 
                         <div className={styles.imgbody}>
@@ -64,7 +65,7 @@ export function StandardPodcastPost() {
 
                             <div className={styles.participantsContainer}>
                             {participantsData.map((participant) => (
-                                <Participants key={participant?.data?.id} profile={"http://localhost:1337" + participant?.data?.attributes?.profile?.data?.attributes?.url} name={participant?.data?.attributes?.name} />  
+                                <Participants key={participant?.data?.id} profile={img_url + participant?.data?.attributes?.profile?.data?.attributes?.url} name={participant?.data?.attributes?.name} />  
                             ))}  
                             </div>
                         </div>

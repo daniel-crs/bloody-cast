@@ -13,6 +13,7 @@ export function PodCast() {
     const location = useLocation();
     const [data, setData] = useState([]);
     const api_url = process.env.REACT_APP_API_URL;
+    const img_url = process.env.REACT_APP_API_IMG_URL;
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -41,7 +42,7 @@ export function PodCast() {
                         <CardRender
                             key={post.id}
                             id={post.id}
-                            img={"http://localhost:1337" + post.attributes.img.data.attributes.url}
+                            img={img_url + post.attributes.img.data.attributes.url}
                             tag={post.attributes.tag}  
                             title={post.attributes.title}
                             text={post.attributes.description}
