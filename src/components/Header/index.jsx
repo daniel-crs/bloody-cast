@@ -8,8 +8,8 @@ import { NavbarMobile } from "../NavbarMobile";
 export function Header() {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const menuOptions = [
-        {optionName: "Home", optionUrl: "/"}, {optionName: "PodCast", optionUrl: "/PodCast"}, {optionName: "Filmes", optionUrl: "/Filmes"},
-        {optionName: "Livros", optionUrl: "/Livros"}, {optionName: "Músicas", optionUrl: "/Musicas"}, {optionName: "Jogos", optionUrl: "/Jogos"}
+        {optionName: "Home", optionUrl: "/"}, {optionName: "Podcast", optionUrl: "/Podcast"}, {optionName: "Filmes", optionUrl: "/Filmes"},
+        {optionName: "Livros", optionUrl: "/Livros"}, {optionName: "Músicas", optionUrl: "/Musicas"}, {optionName: "Games", optionUrl: "/Games"}
     ];
 
     const addScreenWidth = () => {

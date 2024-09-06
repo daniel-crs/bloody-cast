@@ -8,7 +8,7 @@ export function CardMobile({ id, img, tag, title, author }) {
 
     useEffect(() => {
         if(tag == "PodCast") {
-            setPostUrl(`/Postagem/PodCast/${id}`)
+            setPostUrl(`/Postagem/Podcast/${id}`)
         } else {
             setPostUrl(`/Postagem/${tag}/${id}`)
         }

@@ -53,6 +53,7 @@
     font-weight: 400;   
     margin-top: 15px;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 .author {
@@ -94,6 +95,18 @@
     border: 1px solid var(--black);
 }
 
+@media(min-width: 1024px) {
+    .infoContainer {
+        margin-top: 20px;
+    }
+
+    .description {
+        font-size: 1rem;
+        height: 125px;
+        text-overflow: ellipsis;
+    }
+}
+
 @media(min-width: 1280px) {
     .imgElement {
         width: 39%;
@@ -106,6 +119,7 @@
 
     .infoContainer {
         width: 60%;
+        margin-top: 40px;
     }
 
     .title {
