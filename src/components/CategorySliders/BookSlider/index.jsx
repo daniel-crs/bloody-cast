@@ -117,7 +117,7 @@ export function BookSlider({ screenWidth }) {
     return (
         <div className={styles.swiperContainer}>
             <div className={styles.title}>
-                <h3>Livro</h3>
+                <h3>Livros</h3>
                 <span className={styles.underBar}></span>
             </div>
 

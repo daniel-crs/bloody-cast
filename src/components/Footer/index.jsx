@@ -35,7 +35,7 @@ export function Footer() {
 
                             <div className={styles.info}>
                                 <p>E-mail: {contact.attributes.email}</p>
-                                <p>Numero: {contact.attributes.instagram}</p>
+                                <p>Instagram: {contact.attributes.instagram}</p>
                             </div>
                         </div>
                     </div>

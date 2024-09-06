@@ -59,7 +59,7 @@ export function StandardPodcastPost() {
 
                         <div>
                             <div className={styles.participantsTitle}>
-                                <h3>Mais Recentes</h3>
+                                <h3>Participantes</h3>
                                 <span className={styles.underBar}></span>
                             </div>
 
