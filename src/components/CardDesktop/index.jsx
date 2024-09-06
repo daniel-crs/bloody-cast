@@ -6,7 +6,7 @@ export function CardDesktop({ id, img, tag, title, text, author }) {
     
     useEffect(() => {
         if(tag == "PodCast") {
-            setPostUrl(`/Postagem/PodCast/${id}`)
+            setPostUrl(`/Postagem/Podcast/${id}`)
         } else {
             setPostUrl(`/Postagem/${tag}/${id}`)
         }

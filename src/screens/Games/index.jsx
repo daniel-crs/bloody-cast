@@ -20,7 +20,7 @@ export function Games() {
       }, []);
 
     useEffect(() => {
-        const url = `${api_url}/jogos?populate=*`;
+        const url = `${api_url}/games?populate=*`;
         fetch(url)
         .then((res) => res.json())
         .then((post) => {
@@ -33,7 +33,7 @@ export function Games() {
             <Header />
 
             <body>
-                <BgImgCategoryPage title={"Jogos"} bgImg={bgImg} screenEndPoint={location.pathname} />
+                <BgImgCategoryPage title={"Games"} bgImg={bgImg} screenEndPoint={location.pathname} />
 
                 <div className={styles.standardContainer}>
                 <Filter />

@@ -33,7 +33,7 @@ export function PodCast() {
             <Header />
 
             <body>
-                <BgImgCategoryPage title={"PodCast"} bgImg={bgImg} screenEndPoint={location.pathname} />
+                <BgImgCategoryPage title={"Podcast"} bgImg={bgImg} screenEndPoint={location.pathname} />
 
                 <div className={styles.standardContainer}>
                     <Filter />

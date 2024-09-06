@@ -117,7 +117,7 @@ export function MusicSlider({ screenWidth }) {
     return (
         <div className={styles.swiperContainer}>
             <div className={styles.title}>
-                <h3>Musicas</h3>
+                <h3>Músicas</h3>
                 <span className={styles.underBar}></span>
             </div>
 

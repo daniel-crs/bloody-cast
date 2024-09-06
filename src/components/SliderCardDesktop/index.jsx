@@ -6,8 +6,8 @@ export function SliderCardDesktop({ id, img, tag, title, author }) {
     const [postUrl, setPostUrl ] = useState("");
 
     useEffect(() => {
-        if(tag == "PodCast") {
-            setPostUrl(`/Postagem/PodCast/${id}`)
+        if(tag == "Podcast") {
+            setPostUrl(`/Postagem/Podcast/${id}`)
         } else {
             setPostUrl(`/Postagem/${tag}/${id}`)
         }

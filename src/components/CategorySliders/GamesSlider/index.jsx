@@ -12,7 +12,7 @@ export function GamesSlider({ screenWidth }) {
   const img_url = process.env.REACT_APP_API_IMG_URL;
 
   useEffect(() => {
-      fetch(`${api_url}/jogos?populate=*`)
+      fetch(`${api_url}/games?populate=*`)
         .then((res) => res.json())
         .then((games) => setGames(games));
     }, []);
@@ -117,7 +117,7 @@ export function GamesSlider({ screenWidth }) {
     return (
         <div className={styles.swiperContainer}>
             <div className={styles.title}>
-                <h3>Jogos</h3>
+                <h3>Games</h3>
                 <span className={styles.underBar}></span>
             </div>
 

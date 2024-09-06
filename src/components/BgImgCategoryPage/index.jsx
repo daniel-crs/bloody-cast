@@ -9,7 +9,7 @@ import { MdGames } from "react-icons/md";
 export function BgImgCategoryPage({ title, bgImg, screenEndPoint }) {
     
     const RenderIcon = () => {
-        if(screenEndPoint === "/PodCast") {
+        if(screenEndPoint === "/Podcast") {
             return (
                 <FaMicrophone className={styles.icon} />
             )
